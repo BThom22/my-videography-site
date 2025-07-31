@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <title>Client Login | Your Business Name</title>
+  <title>Client Login | True North Media</title>
   <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
@@ -83,18 +83,29 @@
 };
 
   // Sign Up
-  document.getElementById('signup-form').onsubmit = function(e) {
-    e.preventDefault();
-    const email = document.getElementById('signup-email').value;
-    const password = document.getElementById('signup-password').value;
-    auth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        document.getElementById('login-message').textContent = "Account created! You are now logged in.";
-      })
-      .catch(err => {
-        document.getElementById('login-message').textContent = err.message;
-      });
-  };
+document.getElementById('signup-form').onsubmit = function(e) {
+  e.preventDefault();
+  const email = document.getElementById('signup-email').value;
+  const password = document.getElementById('signup-password').value;
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      const msg = document.getElementById('login-message');
+      msg.textContent = "Account created! Redirecting to your dashboard…";
+      msg.style.display = "block";
+      msg.style.color = "#1ab31a"; // Green for success
+      document.getElementById('signup-form').style.display = "none";
+      setTimeout(function() {
+        window.location.href = "dashboard.html"; // Adjust if needed
+      }, 1500);
+    })
+    .catch(err => {
+      const msg = document.getElementById('login-message');
+      msg.textContent = err.message;
+      msg.style.display = "block";
+      msg.style.color = "#b31b34"; // Red for error
+    });
+};
+
 
   // Show/Hide Forms
  document.getElementById('show-signup').onclick = function() {
