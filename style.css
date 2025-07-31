@@ -131,6 +131,7 @@ section {
   transition: box-shadow 0.2s, transform 0.2s;
   min-width: 0;
   justify-content: flex-start;
+  color:#f3960c
 }
 
 .services-list li:hover {
