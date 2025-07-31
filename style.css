@@ -108,6 +108,9 @@ main {
 h2 {
   color: #ffffff;
 }
+blockquote {
+  color: #ffffff;
+}
 section {
   margin-bottom: 2.5em;
 }
