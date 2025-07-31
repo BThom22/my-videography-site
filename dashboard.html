@@ -38,8 +38,8 @@
 </script>
 <script>
   document.getElementById('logout').onclick = function() {
-    firebase.auth().signOut().then(function() {
-      window.location.href = "/login.html";
+    firebase.auth().signOut().then(() => {
+      window.location.href = "index.html"; // Go to home page after logout
     });
   };
 </script>
