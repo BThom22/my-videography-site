@@ -1,6 +1,6 @@
 body {
   font-family: 'Inter', Arial, sans-serif;
-  background: #0b0355;
+  background: #ffffff;
   color: #222;
   margin: 0;
   padding: 0;
@@ -101,7 +101,7 @@ main {
   max-width: 850px;
   margin: 2em auto;
   padding: 1em;
-  background: #fff;
+  background: #01093e;
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
