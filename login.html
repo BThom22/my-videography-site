@@ -41,7 +41,6 @@
 
 
     <div id="login-message" style="text-align:center; margin-top:1em;"></div>
-    <button id="logout" style="display:none; margin:2em auto 0 auto; display:block;">Log Out</button>
       </main>
       <footer>
         <p>© 2025 True North Media</p>
@@ -98,16 +97,24 @@
   };
 
   // Show/Hide Forms
-  document.getElementById('show-signup').onclick = function() {
-    document.getElementById('login-form').style.display = "none";
-    document.getElementById('signup-form').style.display = "block";
-    document.getElementById('login-message').textContent = "";
-  };
-  document.getElementById('back-to-login').onclick = function() {
-    document.getElementById('signup-form').style.display = "none";
-    document.getElementById('login-form').style.display = "block";
-    document.getElementById('login-message').textContent = "";
-  };
+ document.getElementById('show-signup').onclick = function() {
+  document.getElementById('login-form').style.display = "none";
+  document.getElementById('signup-form').style.display = "block";
+  document.getElementById('show-signup').style.display = "none";
+  document.getElementById('forgot-password').style.display = "none";
+  document.getElementById('back-to-login').style.display = "inline-block";
+  document.getElementById('login-message').textContent = "";
+};
+
+document.getElementById('back-to-login').onclick = function() {
+  document.getElementById('signup-form').style.display = "none";
+  document.getElementById('login-form').style.display = "block";
+  document.getElementById('show-signup').style.display = "inline-block";
+  document.getElementById('forgot-password').style.display = "inline-block";
+  document.getElementById('back-to-login').style.display = "none";
+  document.getElementById('login-message').textContent = "";
+};
+
 
   // Forgot Password
   document.getElementById('forgot-password').onclick = function() {
