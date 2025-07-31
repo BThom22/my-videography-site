@@ -105,6 +105,9 @@ main {
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
+h2 {
+  color: #ffffff;
+}
 section {
   margin-bottom: 2.5em;
 }
@@ -131,7 +134,7 @@ section {
   transition: box-shadow 0.2s, transform 0.2s;
   min-width: 0;
   justify-content: flex-start;
-  color:#f3960c
+
 }
 
 .services-list li:hover {
