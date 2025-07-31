@@ -16,14 +16,15 @@
   </header>
   <main>
     <h3>Your Gallery</h3>
-    <div id="gallery" class="gallery-grid">
-      <!-- Thumbnails go here -->
+    <div id="gallery" class="gallery-grid"></div>
+    <div id="empty-message" style="display:none; text-align:center; margin-top:2em; color:#888;">
+      No content yet. Your photos and videos will appear here soon!
     </div>
+
+      <!-- Thumbnails go here -->
   </main>
   <!-- ...scripts at the bottom... -->
-</body>
-
-<script>
+   <script>
   firebase.auth().onAuthStateChanged(function(user) {
     if (!user) {
       window.location.href = "/login.html";
@@ -42,4 +43,7 @@
     });
   };
 </script>
+</body>
+
+
 
