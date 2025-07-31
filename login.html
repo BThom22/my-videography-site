@@ -45,29 +45,22 @@
       <footer>
         <p>© 2025 True North Media</p>
       </footer>
-      <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script>
+  // Your Firebase config (no change needed)
   const firebaseConfig = {
     apiKey: "AIzaSyBF1v6CO2mk-Qne0smAcFNX2GcGAoB32qI",
     authDomain: "login-page-43864.firebaseapp.com",
     projectId: "login-page-43864",
-    storageBucket: "login-page-43864.firebasestorage.app",
+    storageBucket: "login-page-43864.appspot.com",
     messagingSenderId: "142631832617",
     appId: "1:142631832617:web:6ebfe70a7976f45dd66038",
     measurementId: "G-CBRK8ELDWY"
   };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  firebase.initializeApp(firebaseConfig);
 </script>
+
 <script>
   const auth = firebase.auth();
 
