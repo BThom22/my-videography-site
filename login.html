@@ -72,20 +72,22 @@
   const auth = firebase.auth();
 
   // Login
-  document.getElementById('login-form').onsubmit = function(e) {
-    e.preventDefault();
-    const email = document.getElementById('login-email').value;
-    const password = document.getElementById('login-password').value;
-    auth.signInWithEmailAndPassword(email, password)
-      .then(() => {
-        document.getElementById('login-message').textContent = "Login successful!";
-        // Optionally redirect:
-        window.location.href = "/dashboard.html";
-      })
-      .catch(err => {
-        document.getElementById('login-message').textContent = err.message;
-      });
-  };
+ document.getElementById('login-form').onsubmit = function(e) {
+  e.preventDefault();
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      document.getElementById('login-message').textContent = "Login successful! Redirecting...";
+      // Redirect to dashboard
+      setTimeout(function() {
+        window.location.href = "dashboard.html"; // Adjust this path to your real dashboard location!
+      }, 1000);
+    })
+    .catch(err => {
+      document.getElementById('login-message').textContent = err.message;
+    });
+};
 
   // Sign Up
   document.getElementById('signup-form').onsubmit = function(e) {
