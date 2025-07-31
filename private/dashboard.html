@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>True North Media | Videography</title>
+  <link rel="stylesheet" href="./style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./compass flower.png">
+</head>
+
+<body>
+  <header>
+    <h2 id="welcome-message"></h2>
+    <button id="logout">Log Out</button>
+  </header>
+  <main>
+    <h3>Your Gallery</h3>
+    <div id="gallery" class="gallery-grid">
+      <!-- Thumbnails go here -->
+    </div>
+  </main>
+  <!-- ...scripts at the bottom... -->
+</body>
+
+<script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (!user) {
+      window.location.href = "/login.html";
+    } else {
+      document.getElementById('welcome-message').textContent =
+        "Welcome, " + (user.email || "");
+      // You can load user-specific content here
+      loadClientGallery(user);
+    }
+  });
+</script>
+<script>
+  document.getElementById('logout').onclick = function() {
+    firebase.auth().signOut().then(function() {
+      window.location.href = "/login.html";
+    });
+  };
+</script>
+

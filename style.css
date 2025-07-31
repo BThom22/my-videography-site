@@ -290,4 +290,16 @@ footer {
     max-width: 380px;
   }
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+.gallery-grid img, .gallery-grid video {
+  width: 100%;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  background: #222;
+}
 
