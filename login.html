@@ -23,15 +23,21 @@
   </header>
   <main>
     <h1>Client Login</h1>
-    <form action="dashboard.html" method="POST">
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
       <button type="submit">Log In</button>
     </form>
     <div style="text-align:center; margin-top:1em;">
       <button id="show-signup" type="button">Create Account</button>
       <button id="forgot-password" type="button">Forgot Password?</button>
     </div>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Log In</button>
+    </form>
+
 
     <form id="signup-form" style="display:none; margin-top:2em;">
       <input type="email" id="signup-email" placeholder="Email" required />
@@ -81,7 +87,7 @@
       .then(() => {
         document.getElementById('login-message').textContent = "Login successful!";
         // Optionally redirect:
-        // window.location.href = "/dashboard.html";
+        window.location.href = "/dashboard.html";
       })
       .catch(err => {
         document.getElementById('login-message').textContent = err.message;
