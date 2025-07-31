@@ -23,7 +23,7 @@
   </header>
   <main>
     <h1>Client Login</h1>
-    <form action="/dashboard.html" method="POST">
+    <form action="dashboard.html" method="POST">
       <input type="email" placeholder="Email" required />
       <input type="password" placeholder="Password" required />
       <button type="submit">Log In</button>
@@ -46,7 +46,7 @@
       <footer>
         <p>© 2025 True North Media</p>
       </footer>
-  <script type="module">
+      <script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
@@ -72,102 +72,81 @@
 <script>
   const auth = firebase.auth();
 
-  // Forms and elements
-  const loginForm = document.getElementById('login-form');
-  const signupForm = document.getElementById('signup-form');
-  const logoutBtn = document.getElementById('logout');
-  const loginMsg = document.getElementById('login-message');
-  const showSignupBtn = document.getElementById('show-signup');
-  const backToLoginBtn = document.getElementById('back-to-login');
-  const forgotPassBtn = document.getElementById('forgot-password');
-
-  // Show sign up form
-  showSignupBtn.addEventListener('click', () => {
-    loginForm.style.display = "none";
-    signupForm.style.display = "block";
-    loginMsg.textContent = "";
-  });
-
-  // Back to login form
-  backToLoginBtn.addEventListener('click', () => {
-    signupForm.style.display = "none";
-    loginForm.style.display = "block";
-    loginMsg.textContent = "";
-  });
-
-  // LOGIN
-  loginForm.addEventListener('submit', (e) => {
+  // Login
+  document.getElementById('login-form').onsubmit = function(e) {
     e.preventDefault();
-    const email = loginForm.email.value;
-    const password = loginForm.password.value;
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
     auth.signInWithEmailAndPassword(email, password)
       .then(() => {
-        loginMsg.textContent = "Login successful!";
-        loginForm.style.display = "none";
-        logoutBtn.style.display = "block";
-        signupForm.style.display = "none";
+        document.getElementById('login-message').textContent = "Login successful!";
+        // Optionally redirect:
+        // window.location.href = "/dashboard.html";
       })
       .catch(err => {
-        loginMsg.textContent = err.message;
+        document.getElementById('login-message').textContent = err.message;
       });
-  });
+  };
 
-  // SIGN UP
-  signupForm.addEventListener('submit', (e) => {
+  // Sign Up
+  document.getElementById('signup-form').onsubmit = function(e) {
     e.preventDefault();
-    const email = signupForm['signup-email'].value;
-    const password = signupForm['signup-password'].value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
     auth.createUserWithEmailAndPassword(email, password)
       .then(() => {
-        loginMsg.textContent = "Account created! You are now logged in.";
-        signupForm.style.display = "none";
-        logoutBtn.style.display = "block";
+        document.getElementById('login-message').textContent = "Account created! You are now logged in.";
       })
       .catch(err => {
-        loginMsg.textContent = err.message;
+        document.getElementById('login-message').textContent = err.message;
       });
-  });
+  };
 
-  // FORGOT PASSWORD
-  forgotPassBtn.addEventListener('click', () => {
+  // Show/Hide Forms
+  document.getElementById('show-signup').onclick = function() {
+    document.getElementById('login-form').style.display = "none";
+    document.getElementById('signup-form').style.display = "block";
+    document.getElementById('login-message').textContent = "";
+  };
+  document.getElementById('back-to-login').onclick = function() {
+    document.getElementById('signup-form').style.display = "none";
+    document.getElementById('login-form').style.display = "block";
+    document.getElementById('login-message').textContent = "";
+  };
+
+  // Forgot Password
+  document.getElementById('forgot-password').onclick = function() {
     const email = prompt("Enter your email to reset your password:");
     if (email) {
       auth.sendPasswordResetEmail(email)
         .then(() => {
-          loginMsg.textContent = "Password reset email sent.";
+          document.getElementById('login-message').textContent = "Password reset email sent.";
         })
         .catch(err => {
-          loginMsg.textContent = err.message;
+          document.getElementById('login-message').textContent = err.message;
         });
     }
-  });
+  };
 
-  // LOGOUT
-  logoutBtn.addEventListener('click', () => {
-    auth.signOut().then(() => {
-      loginMsg.textContent = "Logged out.";
-      loginForm.style.display = "block";
-      signupForm.style.display = "none";
-      logoutBtn.style.display = "none";
-    });
-  });
+  // Log Out (if you have a logout button)
+  if(document.getElementById('logout')) {
+    document.getElementById('logout').onclick = function() {
+      auth.signOut().then(() => {
+        document.getElementById('login-message').textContent = "Logged out.";
+        document.getElementById('login-form').style.display = "block";
+        document.getElementById('signup-form').style.display = "none";
+        document.getElementById('logout').style.display = "none";
+      });
+    };
+  }
 
-  // SHOW/HIDE based on auth state
+  // Show/hide based on auth state (optional, can customize)
   auth.onAuthStateChanged(user => {
     if (user) {
-      loginForm.style.display = "none";
-      signupForm.style.display = "none";
-      logoutBtn.style.display = "block";
-      loginMsg.textContent = "Already logged in.";
-      // Optionally redirect here
-    } else {
-      loginForm.style.display = "block";
-      signupForm.style.display = "none";
-      logoutBtn.style.display = "none";
-      loginMsg.textContent = "";
+      // Optionally show/hide elements
+      // window.location.href = "/dashboard.html";
     }
   });
 </script>
-
 </body>
 </html>
