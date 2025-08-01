@@ -44,6 +44,11 @@ header nav > * {
   height: 80px;
   width: auto;
 }
+
+.logo:hover img {
+  transform: scale(1.15); /* Increase to 1.2 for more, 1.05 for less */
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -116,7 +121,7 @@ nav a:hover {
   transition: background 0.2s;
 }
 .cta:hover {
-  background: #881524;
+  background: #000050;
 }
 main {
   max-width: 850px;
