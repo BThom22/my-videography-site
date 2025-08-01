@@ -121,6 +121,7 @@ main {
   background: #01093e;
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  z-index: 1;
 }
 h2 {
   color: #ffffff;
