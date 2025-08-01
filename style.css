@@ -16,7 +16,6 @@ header nav {
   position: relative;
   min-height: 80px; /* Keep or adjust as needed */
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  border-radius: 1.5em; /* Optional: rounds corners */
   overflow: hidden; /* Needed for rounded corners on overlay */
 }
 
