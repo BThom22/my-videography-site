@@ -67,7 +67,7 @@ nav ul a {
     color 0.2s cubic-bezier(.22,.61,.36,1),
     box-shadow 0.2s cubic-bezier(.22,.61,.36,1);
   padding: 0.15em .7em;
-  border-radius: 0.5em;
+  border-radius: 0.15em;
   display: inline-block;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
@@ -76,7 +76,7 @@ nav ul a:hover,
 nav ul a:focus {
   color: #f3960c; /* Your existing orange */
   background: rgba(255,255,255,0.92); /* White box on hover, mostly opaque */
-  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  box-shadow: 0 0 0 8px rgba(255,255,255,0.48); ;
   outline: none;
 }
 
