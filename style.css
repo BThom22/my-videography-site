@@ -10,8 +10,31 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: .5em 2em;
-  background: #fff;
+  /* Replace #fff with your background image */
+  background: url('/Sketched\ Sailboats.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  min-height: 80px; /* Keep or adjust as needed */
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 1.5em; /* Optional: rounds corners */
+  overflow: hidden; /* Needed for rounded corners on overlay */
+}
+
+/* Overlay for better text contrast */
+header nav::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.32);  /* Adjust opacity as needed */
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 1.5em;
+}
+
+/* Keep nav content above overlay */
+header nav > * {
+  position: relative;
+  z-index: 1;
 }
 .logo {
   font-weight: bold;
