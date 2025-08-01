@@ -354,16 +354,15 @@ footer {
 
 @media (max-width: 700px) {
   .hero-card .hero-video {
-    height: 130px;
+    max-height: 170px;
+    min-height: 80px;
+    aspect-ratio: 16/9;
   }
   .hero-card .hero-content {
-    padding: 1.2em 0.7em 1.1em 0.7em;
+    padding: 1em 0.6em;
   }
   .hero-card .hero-content h1 {
     font-size: 1.1em;
-  }
-  .hero-card .hero-content p {
-    font-size: 0.96em;
   }
 }
 
