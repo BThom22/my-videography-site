@@ -43,6 +43,8 @@ header nav > * {
   display: block;
   height: 80px;
   width: auto;
+  transition: transform 0.25s cubic-bezier(.22,.61,.36,1);
+  will-change: transform;
 }
 
 .logo:hover img {
@@ -60,11 +62,24 @@ nav a {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
-  transition: color 0.2s;
+  transition:
+    background 0.2s cubic-bezier(.22,.61,.36,1),
+    color 0.2s cubic-bezier(.22,.61,.36,1),
+    box-shadow 0.2s cubic-bezier(.22,.61,.36,1);
+  padding: 0.5em 1.2em;
+  border-radius: 0.75em;
+  display: inline-block;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-nav a:hover {
-  color: #f3960c;
+
+nav a:hover,
+nav a:focus {
+  color: #f3960c; /* Your existing orange */
+  background: rgba(255,255,255,0.92); /* White box on hover, mostly opaque */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  outline: none;
 }
+
 
 .hero {
   position: relative;
