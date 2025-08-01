@@ -5,23 +5,6 @@ body {
   margin: 0;
   padding: 0;
 }
-body {
-  /* Use your image path or a relative path */
-  background: url('Sketched\ Sailboats.jpg') no-repeat center center fixed;
-  background-size: cover;
-  /* Optional: Add a slight tint/overlay for readability */
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.6); /* Light overlay for softness */
-  z-index: 0;
-  pointer-events: none;
-}
-
 header nav {
   display: flex;
   justify-content: space-between;
@@ -121,7 +104,6 @@ main {
   background: #01093e;
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  z-index: 1;
 }
 h2 {
   color: #ffffff;
