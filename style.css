@@ -242,7 +242,7 @@ button {
   transition: background 0.2s;
 }
 button:hover {
-  background: #00095c;
+  background: #ffdd95;
 }
 footer {
   text-align: center;
