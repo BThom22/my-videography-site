@@ -11,7 +11,7 @@ header nav {
   align-items: center;
   padding: .5em 2em;
   /* Replace #fff with your background image */
-  background: url('/Sketched\ Sailboats.jpg') no-repeat center center;
+  background: url('/sailboats.png') no-repeat center center;
   background-size: cover;
   position: relative;
   min-height: 80px; /* Keep or adjust as needed */
