@@ -394,5 +394,89 @@ footer {
   .hero-card .hero-content p { font-size: 0.92em; }
 }
 
+/* Hamburger menu basic styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1101; /* above nav overlay */
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 4px;
+  width: 26px;
+  background: #222;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: .3s;
+}
+
+/* Hide menu on mobile, show hamburger */
+@media (max-width: 700px) {
+  nav ul.nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    margin: 0;
+    padding: 1.5em 0 1em 0;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.13);
+    border-radius: 0 0 1.2em 1.2em;
+    z-index: 1100;
+  }
+  nav ul.nav-links li {
+    margin: 0.7em 0;
+  }
+  .nav-toggle-label {
+    display: flex;
+  }
+  nav {
+    position: relative;
+  }
+  .logo img {
+    height: 38px;
+  }
+}
+
+/* Show menu when toggled */
+.nav-toggle:checked ~ .nav-links {
+  display: flex !important;
+}
+
+@media (max-width: 700px) {
+  nav {
+    padding-right: 1em;
+    padding-left: 1em;
+    min-height: 56px;
+  }
+  nav ul {
+    gap: 0;
+  }
+}
+
+/* Optional: animate hamburger to "X" when open */
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
 
 
