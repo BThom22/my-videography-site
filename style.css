@@ -81,49 +81,6 @@ nav ul a:focus {
   transform: scale(1.15);
 }
 
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 60vh;            /* Adjust the height as needed */
-  min-height: 400px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-  filter: brightness(0.6); /* Darkens the video for text readability */
-  border-radius: 10px;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-align: center;
-  width: 100%;
-  padding: 2em 1em;
-}
-
-.hero-content h1,
-.hero-content p,
-.hero-content .cta {
-  text-shadow: 0 4px 24px rgba(0,0,0,0.6);
-}
-
-
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-}
 .cta {
   display: inline-block;
   margin-top: 1.5em;
@@ -349,21 +306,61 @@ footer {
   background: #222;
 }
 
+.card {
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin-bottom: 2em;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-card {
+  padding: 0;
+  min-height: unset;
+}
+
+.hero-card .hero-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  margin-bottom: 0;
+  filter: brightness(0.65); /* Optional: keep your text readable */
+}
+
+.hero-card .hero-content {
+  padding: 2em 1.5em 1.5em 1.5em;
+  text-align: center;
+  color: #222; /* Use your standard text color for consistency */
+}
+
+.hero-card .hero-content h1,
+.hero-card .hero-content p,
+.hero-card .hero-content .cta {
+  text-shadow: none;
+  color: #222;
+}
+
+.hero-card .cta {
+  margin-top: 1.3em;
+}
+
 @media (max-width: 700px) {
-  .hero {
-    min-height: 220px;
-    height: 35vh;
-    padding-top: 2em;
-    padding-bottom: 2em;
+  .hero-card .hero-video {
+    height: 130px;
   }
-  .hero-content {
-    padding: 1.2em 0.5em;
+  .hero-card .hero-content {
+    padding: 1.2em 0.7em 1.1em 0.7em;
   }
-  .hero-content h1 {
+  .hero-card .hero-content h1 {
     font-size: 1.1em;
   }
-  .hero-content p {
+  .hero-card .hero-content p {
     font-size: 0.96em;
   }
 }
+
 
