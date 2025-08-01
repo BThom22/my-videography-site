@@ -349,3 +349,21 @@ footer {
   background: #222;
 }
 
+@media (max-width: 700px) {
+  .hero {
+    min-height: 220px;
+    height: 35vh;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+  .hero-content {
+    padding: 1.2em 0.5em;
+  }
+  .hero-content h1 {
+    font-size: 1.1em;
+  }
+  .hero-content p {
+    font-size: 0.96em;
+  }
+}
+
