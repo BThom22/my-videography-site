@@ -53,12 +53,12 @@ nav ul {
 }
 nav a {
   text-decoration: none;
-  color: #222;
+  color: #fff;
   font-weight: 500;
   transition: color 0.2s;
 }
 nav a:hover {
-  color: #b31b34;
+  color: #f3960c;
 }
 
 .hero {
