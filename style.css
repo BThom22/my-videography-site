@@ -76,7 +76,7 @@ nav ul a:hover,
 nav ul a:focus {
   color: #f3960c; /* Your existing orange */
   background: rgba(255,255,255,0.92); /* White box on hover, mostly opaque */
-  box-shadow: box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   outline: none;
   transform: scale(1.15);
 }
