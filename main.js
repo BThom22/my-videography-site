@@ -1,12 +1,10 @@
-// menu.js
 document.addEventListener("DOMContentLoaded", function() {
-  var hamburger = document.querySelector('.hamburger');
-  var navLinks = document.querySelector('.nav-links');
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', function() {
-      navLinks.classList.toggle('active');
-    });
-  }
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  hamburger.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('open'); // Optional: animate hamburger icon
+  });
 });
+
 
