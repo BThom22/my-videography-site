@@ -420,14 +420,22 @@ footer {
     box-shadow: none;
     transform: none;
   }
+
+  /* Hamburger icon is shown */
   .nav-toggle-label {
     display: flex;
   }
-  /* Show menu when hamburger is checked */
+  /* This shows the menu when the hamburger is toggled */
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
+
+  /* Navigation and logo tweaks for mobile */
   nav {
     position: relative;
   }
+  .logo img {
+    height: 38px;
+  }
 }
+
