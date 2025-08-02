@@ -468,7 +468,8 @@ footer {
   .nav-toggle-label {
     display: flex;
   }
-  .nav-toggle:checked ~ .nav-links {
+  /* THIS IS THE KEY SELECTOR */
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
   nav {
@@ -478,6 +479,13 @@ footer {
     height: 38px;
   }
 }
+@media (max-width: 700px) {
+  /* force nav-links to show when hamburger checked */
+  .nav-toggle:checked + .nav-toggle-label + .nav-links {
+    display: flex !important;
+  }
+}
+
 
 
 
