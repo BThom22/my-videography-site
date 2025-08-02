@@ -71,7 +71,7 @@ header nav > * {
 }
 
 /* Hamburger checkbox (hidden on desktop) */
-.nav-toggle, {
+.nav-toggle {
   display: none;
 }
 /* Hamburger icon (hidden on desktop) */
