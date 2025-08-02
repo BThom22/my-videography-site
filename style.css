@@ -71,8 +71,7 @@ header nav > * {
 }
 
 /* Hamburger checkbox (hidden on desktop) */
-.nav-toggle,
-.nav-toggle-label {
+.nav-toggle, {
   display: none;
 }
 /* Hamburger icon (hidden on desktop) */
@@ -381,6 +380,7 @@ footer {
 @media (max-width: 700px) {
   .logo img { height: 38px; }
   .nav-links {
+    display: none;
     flex-direction: column;
     align-items: center;
     background: #fff;
@@ -394,7 +394,6 @@ footer {
     z-index: 200;
     margin: 0;
     gap: 0;
-    display: none;
   }
   .nav-links li {
     text-align: center;
@@ -416,8 +415,6 @@ footer {
     box-shadow: none;
     transform: none;
   }
-
-  /* Show hamburger */
   .nav-toggle-label {
     display: flex;
     flex-direction: column;
@@ -441,9 +438,9 @@ footer {
     border-radius: 2px;
     transition: .3s;
   }
-  /* Hide menu by default, show when checked */
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
 }
+
 
