@@ -376,13 +376,23 @@ footer {
 }
 
 /* ----------- Hamburger Menu (Mobile) ----------- */
+/* --- Desktop nav --- */
+@media (min-width: 701px) {
+  .nav-links { 
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* --- Mobile nav --- */
 @media (max-width: 700px) {
   .logo img { height: 38px; }
   .hamburger { 
     display: flex;
     z-index: 1200;
     position: relative;
-   }
+  }
   .nav-links {
     flex-direction: column;
     align-items: center;
@@ -419,12 +429,6 @@ footer {
     color: #fff;
     box-shadow: none;
     transform: none;
-  }
-}
-
-@media (min-width: 701px) {
-  .nav-links {
-    display: flex;
   }
 }
 
