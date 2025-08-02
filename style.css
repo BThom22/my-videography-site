@@ -420,14 +420,6 @@ footer {
   transition: .3s;
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-  margin: 0;
-  padding: 0;
-}
-
 @media (max-width: 700px) {
   .nav-links {
     display: none;
@@ -467,11 +459,30 @@ footer {
 
   .nav-toggle-label {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1101;
+    padding: 1em;
   }
-  /* THIS IS THE KEY SELECTOR */
+
+  .nav-toggle-label span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #222;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: .3s;
+  }
+
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
+
   nav {
     position: relative;
   }
@@ -479,12 +490,7 @@ footer {
     height: 38px;
   }
 }
-@media (max-width: 700px) {
-  /* force nav-links to show when hamburger checked */
-  .nav-toggle:checked + .nav-toggle-label + .nav-links {
-    display: flex !important;
-  }
-}
+
 
 
 
