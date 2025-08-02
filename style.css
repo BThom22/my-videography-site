@@ -1,3 +1,4 @@
+/* ----------- Base Styles ----------- */
 body {
   font-family: 'Inter', Arial, sans-serif;
   background: #ffffff;
@@ -10,30 +11,26 @@ header nav {
   justify-content: space-between;
   align-items: center;
   padding: .5em 2em;
-  /* Replace #fff with your background image */
   background: url('/sailboats.png') no-repeat center center;
   background-size: cover;
   position: relative;
-  min-height: 80px; /* Keep or adjust as needed */
+  min-height: 80px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  overflow: hidden; /* Needed for rounded corners on overlay */
+  overflow: hidden;
 }
-
-/* Overlay for better text contrast */
 header nav::after {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.32);  /* Adjust opacity as needed */
+  background: rgba(0,0,0,0.32);
   z-index: 0;
   pointer-events: none;
 }
-
-/* Keep nav content above overlay */
 header nav > * {
   position: relative;
   z-index: 1;
 }
+
 .logo {
   font-weight: bold;
   font-size: 1.5em;
@@ -46,11 +43,11 @@ header nav > * {
   transition: transform 0.25s cubic-bezier(.22,.61,.36,1);
   will-change: transform;
 }
-
 .logo:hover img {
-  transform: scale(1.15); /* Increase to 1.2 for more, 1.05 for less */
+  transform: scale(1.15);
 }
 
+/* ----------- Nav Menu ----------- */
 .nav-links {
   list-style: none;
   display: flex;
@@ -71,31 +68,42 @@ header nav > * {
   display: inline-block;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #f3960c; /* Your existing orange */
-  background: rgba(255,255,255,0.92); /* White box on hover, mostly opaque */
+  color: #f3960c;
+  background: rgba(255,255,255,0.92);
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   outline: none;
   transform: scale(1.15);
 }
 
-.cta {
-  display: inline-block;
-  margin-top: 1.5em;
-  background: #f3960c;
-  color: #fff;
-  padding: 0.7em 2em;
-  border-radius: 3em;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: background 0.2s;
+/* Hamburger checkbox (hidden on desktop) */
+.nav-toggle {
+  display: none;
 }
-.cta:hover {
-  background: #000050;
+/* Hamburger icon (hidden on desktop) */
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  z-index: 1101;
+  padding: 1em;
 }
+.nav-toggle-label span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #222;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: .3s;
+}
+
+/* ----------- Main Content Styles ----------- */
 main {
   max-width: 850px;
   margin: 2em auto;
@@ -104,32 +112,23 @@ main {
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
-h2 {
-  color: #ffffff;
-}
-blockquote {
-  color: #ffffff;
-}
-h1 {
-  color: #ffffff;
-}
-
-h3 {
+h1, h2, h3, blockquote {
   color: #ffffff;
 }
 section {
   margin-bottom: 2.5em;
 }
+
+/* ----------- Services ----------- */
 .services-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* Two columns */
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.6em 1.2em;
   list-style: none;
   padding: 0;
   margin: 2em auto 0 auto;
-  max-width: 700px;   /* Centers the grid and limits width */
+  max-width: 700px;
 }
-
 .services-list li {
   display: flex;
   align-items: center;
@@ -143,28 +142,18 @@ section {
   transition: box-shadow 0.2s, transform 0.2s;
   min-width: 0;
   justify-content: flex-start;
-
 }
-
 .services-list li:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.14);
   transform: translateY(-4px) scale(1.03);
   background: #f2f3f7;
 }
-
 .services-list i {
   color: #110162;
   font-size: 1.4em;
 }
 
-/* Make the grid stack into one column on mobile */
-@media (max-width: 700px) {
-  .services-list {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-}
-
+/* ----------- Video Grid ----------- */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -177,6 +166,8 @@ iframe {
   border-radius: 0.5em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
+/* ----------- Forms/Inputs ----------- */
 form {
   display: flex;
   flex-direction: column;
@@ -201,23 +192,22 @@ button {
 button:hover {
   background: #ffdd95;
 }
+
+/* ----------- Footer ----------- */
 footer {
   text-align: center;
   font-size: 0.9em;
   color: #888;
   padding: 1.5em 0 0.5em 0;
 }
-@media (max-width: 600px) {
-  .hero h1 { font-size: 1.5em; }
-  main { padding: 0.5em; }
-}
+
+/* ----------- Pricing Cards ----------- */
 .pricing {
   max-width: 900px;
   margin: 3em auto;
   padding: 2em 1em;
   text-align: center;
 }
-
 .pricing-table {
   display: flex;
   flex-wrap: wrap;
@@ -225,7 +215,6 @@ footer {
   justify-content: center;
   margin-top: 2em;
 }
-
 .pricing-package {
   background: #fff;
   border-radius: 1em;
@@ -239,40 +228,34 @@ footer {
   flex-direction: column;
   align-items: center;
 }
-
 .pricing-package h2 {
   margin-top: 0;
   font-size: 1.3em;
   color: #000357;
 }
-
 .price {
   font-size: 2em;
   font-weight: bold;
   margin: 0.5em 0 1em 0;
   color: #222;
 }
-
 .pricing-package ul {
   list-style: none;
   padding: 0;
   margin: 0 0 1em 0;
   text-align: left;
 }
-
 .pricing-package ul li {
   margin-bottom: 0.8em;
   padding-left: 1em;
   position: relative;
 }
-
 .pricing-package ul li::before {
   content: "✓";
   color: #222;
   position: absolute;
   left: 0;
 }
-
 .fine-print {
   font-size: 0.9em;
   color: #888;
@@ -280,19 +263,10 @@ footer {
 }
 .center {
   text-align: center;
-  margin: 2em 0; /* optional: adds vertical space above and below */
+  margin: 2em 0;
 }
 
-@media (max-width: 900px) {
-  .pricing-table {
-    flex-direction: column;
-    align-items: center;
-  }
-  .pricing-package {
-    width: 90%;
-    max-width: 380px;
-  }
-}
+/* ----------- Gallery Grid ----------- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -306,6 +280,7 @@ footer {
   background: #222;
 }
 
+/* ----------- Hero Card (Home Page Video) ----------- */
 .card {
   background: #fff;
   border-radius: 1em;
@@ -314,7 +289,6 @@ footer {
   position: relative;
   overflow: hidden;
 }
-
 .card.hero-card {
   position: relative;
   width: 100%;
@@ -325,13 +299,12 @@ footer {
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
   overflow: hidden;
-  background: #000; /* fallback in case video doesn't load */
+  background: #000;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
   padding: 0;
 }
-
 .hero-card .hero-video {
   position: absolute;
   top: 0; left: 0;
@@ -341,7 +314,6 @@ footer {
   z-index: 1;
   pointer-events: none;
 }
-
 .hero-card .hero-content {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -352,18 +324,16 @@ footer {
   align-items: center;
   z-index: 2;
   color: #fff;
-  background: none; /* No white background here! */
+  background: none;
   text-align: center;
   padding: 2em 1em;
 }
-
 .hero-card .hero-content h1,
 .hero-card .hero-content p {
   color: #fff;
   text-shadow: 0 4px 24px rgba(0,0,0,0.7);
   margin: 0.4em 0;
 }
-
 .hero-card .cta {
   margin-top: 1.2em;
   background: #f3960c;
@@ -382,7 +352,22 @@ footer {
   background: #000050;
 }
 
+/* ----------- Responsive Tweaks ----------- */
+@media (max-width: 900px) {
+  .pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-package {
+    width: 90%;
+    max-width: 380px;
+  }
+}
 @media (max-width: 700px) {
+  .services-list {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
   .card.hero-card {
     min-height: 150px;
     aspect-ratio: 16 / 10;
@@ -392,34 +377,13 @@ footer {
   }
   .hero-card .hero-content h1 { font-size: 1em; }
   .hero-card .hero-content p { font-size: 0.92em; }
+  main { padding: 0.5em; }
+  .logo img {
+    height: 38px;
+  }
 }
 
-.nav-toggle {
-  display: none;
-}
-
-.nav-toggle-label {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  z-index: 1101;
-  padding: 1em;
-}
-
-.nav-toggle-label span {
-  display: block;
-  height: 4px;
-  width: 28px;
-  background: #222;
-  margin: 5px 0;
-  border-radius: 2px;
-  transition: .3s;
-}
-
+/* ----------- Hamburger Menu (Mobile) ----------- */
 @media (max-width: 700px) {
   .nav-links {
     display: none;
@@ -456,44 +420,14 @@ footer {
     box-shadow: none;
     transform: none;
   }
-
   .nav-toggle-label {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    z-index: 1101;
-    padding: 1em;
   }
-
-  .nav-toggle-label span {
-    display: block;
-    height: 4px;
-    width: 28px;
-    background: #222;
-    margin: 5px 0;
-    border-radius: 2px;
-    transition: .3s;
-  }
-
+  /* Show menu when hamburger is checked */
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
   }
-
   nav {
     position: relative;
   }
-  .logo img {
-    height: 38px;
-  }
 }
-
-
-
-
-
-
-
