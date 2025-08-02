@@ -17,6 +17,7 @@ header nav {
   min-height: 80px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   overflow: hidden;
+  z-index: 100;
 }
 header nav::after {
   content: "";
@@ -30,12 +31,6 @@ header nav > * {
   position: relative;
   z-index: 1;
 }
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5em;
-  letter-spacing: 0.03em;
-}
 .logo img {
   display: block;
   height: 80px;
@@ -43,9 +38,7 @@ header nav > * {
   transition: transform 0.25s cubic-bezier(.22,.61,.36,1);
   will-change: transform;
 }
-.logo:hover img {
-  transform: scale(1.15);
-}
+.logo:hover img { transform: scale(1.15); }
 
 /* ----------- Nav Menu ----------- */
 .nav-links {
@@ -78,7 +71,8 @@ header nav > * {
 }
 
 /* Hamburger checkbox (hidden on desktop) */
-.nav-toggle {
+.nav-toggle,
+.nav-toggle-label {
   display: none;
 }
 /* Hamburger icon (hidden on desktop) */
@@ -385,20 +379,22 @@ footer {
 
 /* ----------- Hamburger Menu (Mobile) ----------- */
 @media (max-width: 700px) {
+  .logo img { height: 38px; }
   .nav-links {
-    display: none;
     flex-direction: column;
+    align-items: center;
     background: #fff;
     position: absolute;
-    top: 100%;
     left: 0; right: 0;
+    top: 100%;
     padding: 1.5em 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.13);
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    z-index: 9;
+    z-index: 200;
     margin: 0;
     gap: 0;
+    display: none;
   }
   .nav-links li {
     text-align: center;
@@ -421,21 +417,33 @@ footer {
     transform: none;
   }
 
-  /* Hamburger icon is shown */
+  /* Show hamburger */
   .nav-toggle-label {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    z-index: 201;
+    background: none;
+    border: none;
+    margin-left: auto;
+    padding: 0;
   }
-  /* This shows the menu when the hamburger is toggled */
+  .nav-toggle-label span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #222;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: .3s;
+  }
+  /* Hide menu by default, show when checked */
   .nav-toggle:checked + .nav-toggle-label + .nav-links {
     display: flex !important;
-  }
-
-  /* Navigation and logo tweaks for mobile */
-  nav {
-    position: relative;
-  }
-  .logo img {
-    height: 38px;
   }
 }
 
