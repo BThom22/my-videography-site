@@ -43,7 +43,6 @@ header nav > * {
 /* ----------- Nav Menu ----------- */
 .nav-links {
   list-style: none;
-  display: flex;
   gap: 2em;
   margin: 0;
   padding: 0;
@@ -423,5 +422,9 @@ footer {
   }
 }
 
-
+@media (min-width: 701px) {
+  .nav-links {
+    display: flex;
+  }
+}
 
