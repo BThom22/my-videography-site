@@ -368,7 +368,9 @@ footer {
   border: none;
   cursor: pointer;
   z-index: 9999;
-  position: relative;
+  position: fixed;
+  top: 30px;
+  right: 30px;
 }
 .hamburger span {
   display: block;
