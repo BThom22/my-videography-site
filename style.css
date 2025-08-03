@@ -376,7 +376,7 @@ footer {
   width: 28px;
   height: 4px;
   background: yellow !important;
-  border: 2px solid black !important;
+  border: 2px solid #fff !important;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
