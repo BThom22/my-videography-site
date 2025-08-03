@@ -177,6 +177,8 @@ iframe {
   cursor: pointer;
   margin-top: 0.3em;
   transition: background 0.2s;
+  display: block;
+  text-align: center;
 }
 .primary-btn:hover,
 .primary-btn:focus {
