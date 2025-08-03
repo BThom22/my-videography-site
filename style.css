@@ -446,7 +446,7 @@ footer {
     gap: 2em;
     background: rgba(1,9,62,0.96);  /* Change color as needed */
     padding: 0.4em 2em;
-    border-radius: 2em;
+    border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     height: 48px;
     margin-left: 1.5em;  /* adjust for spacing from logo */ 
