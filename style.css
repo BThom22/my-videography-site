@@ -416,7 +416,7 @@ footer {
     border: 1px solid green !important; /* Debug border, remove after */
     transition: .3s;
   }
-}
+
   .nav-links.active {
     display: flex !important;
   }
@@ -432,6 +432,7 @@ footer {
     display: block;
     padding: 1em;
   }
+}
 
 
 
