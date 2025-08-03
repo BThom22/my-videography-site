@@ -22,7 +22,7 @@ header nav {
   min-height: 80px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   overflow: hidden;
-  z-index: 100;
+  z-index: 3001;
 }
 header nav::after {
   content: "";
@@ -406,7 +406,7 @@ footer {
     box-shadow: 0 8px 40px rgba(0,0,0,0.13);
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
-    z-index: 1100;
+    z-index: 4000 !important;
     margin: 0;
     gap: 0;
     display: none;
