@@ -366,8 +366,8 @@ footer {
   height: 44px;
   cursor: pointer;
   z-index: 9999;
-  background: none !important;
-  border: none;
+  background: red !important;
+  border: 4px solid blue !important;
   outline: none;
   position: relative;
 }
@@ -376,7 +376,8 @@ footer {
   display: block;
   width: 28px;
   height: 4px;
-  background: #fff; /* <-- This is black. You can use #fff if your nav is dark */
+  background: yellow !important;
+  border: 2px solid black !important;
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
