@@ -364,8 +364,6 @@ footer {
   align-items: center;
   width: 44px;
   height: 44px;
-  background: rgba(255,0,0,0.1); /* TEMP: light red for testing */
-  border: 2px solid #000;        /* TEMP: black border for testing */
   cursor: pointer;
   z-index: 9999;
   position: relative;
@@ -375,11 +373,10 @@ footer {
   display: block;
   width: 28px;
   height: 4px;
-  background: #222;       /* Dark bars for visibility */
+  background: #fff;      
   margin: 4px 0;
   border-radius: 2px;
   transition: .3s;
-  border: 1px solid red;
 }
 
 @media (max-width: 700px) {
