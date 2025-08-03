@@ -367,7 +367,6 @@ footer {
   cursor: pointer;
   z-index: 9999;
   background: red !important;
-  border: 4px solid blue !important;
   outline: none;
   position: relative;
 }
