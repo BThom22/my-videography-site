@@ -6,11 +6,12 @@ header {
 
 body {
   font-family: 'Inter', Arial, sans-serif;
-  background: #ffffff;
+  background: #fff;
   color: #222;
   margin: 0;
   padding: 0;
 }
+
 header nav {
   display: flex;
   justify-content: space-between;
@@ -24,6 +25,7 @@ header nav {
   overflow: visible;
   z-index: 3001;
 }
+
 header nav::after {
   content: "";
   position: absolute;
@@ -32,10 +34,12 @@ header nav::after {
   z-index: 0;
   pointer-events: none;
 }
+
 header nav > * {
   position: relative;
   z-index: 1;
 }
+
 .logo img {
   display: block;
   height: 80px;
@@ -43,9 +47,16 @@ header nav > * {
   transition: transform 0.25s cubic-bezier(.22,.61,.36,1);
   will-change: transform;
 }
+
 .logo:hover img { transform: scale(1.15); }
 
 /* ----------- Nav Menu ----------- */
+.nav-links {
+  list-style: none;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
 
 .nav-links a {
   text-decoration: none;
@@ -60,6 +71,7 @@ header nav > * {
   display: inline-block;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+
 .nav-links a:hover,
 .nav-links a:focus {
   color: #f3960c;
@@ -77,67 +89,26 @@ main {
   background: #01093e;
   border-radius: 1em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
+
 h1, h2, h3, blockquote {
-  color: #ffffff;
+  color: #fff;
 }
+
 section {
   margin-bottom: 2.5em;
 }
 
-/* ----------- Services ----------- */
-.services-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6em 1.2em;
-  list-style: none;
-  padding: 0;
-  margin: 2em auto 0 auto;
-  max-width: 700px;
-}
-.services-list li {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  background: #fff;
-  border-radius: 1em;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  font-weight: 500;
-  padding: 1.3em 2em;
-  font-size: 1.08em;
-  transition: box-shadow 0.2s, transform 0.2s;
-  min-width: 0;
-  justify-content: flex-start;
-}
-.services-list li:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-  transform: translateY(-4px) scale(1.03);
-  background: #f2f3f7;
-}
-.services-list i {
-  color: #110162;
-  font-size: 1.4em;
-}
-
-/* ----------- Video Grid ----------- */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1em;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-}
-iframe {
-  width: 100%;
-  min-height: 200px;
-  border-radius: 0.5em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* ----------- Forms/Inputs ----------- */
+/* ----------- Login Card ----------- */
 .login-card {
-  max-width: 450px;
+  max-width: 440px;
   width: 100%;
-  margin: 3em auto;
+  margin: 3em auto 0 auto;
   background: #01093e;
   border-radius: 1.3em;
   box-shadow: 0 2px 16px rgba(0,0,0,0.14);
@@ -155,12 +126,16 @@ iframe {
   font-weight: 700;
 }
 
+/* Forms centered inside card */
 #login-form,
 #signup-form {
   display: flex;
   flex-direction: column;
   gap: 1.2em;
   width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  align-items: center;
 }
 
 #login-form input,
@@ -174,6 +149,7 @@ iframe {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   border: 1px solid #eee;
   width: 100%;
+  margin: 0;
 }
 
 .primary-btn {
@@ -201,8 +177,9 @@ iframe {
   display: flex;
   gap: 1em;
   justify-content: center;
-  margin: 1em 0;
+  margin: 1em auto 0 auto;
   width: 100%;
+  max-width: 340px;
   flex-wrap: wrap;
 }
 
@@ -217,7 +194,11 @@ iframe {
   font-size: 1em;
   margin-top: 0.2em;
   transition: background 0.2s, color 0.2s;
+  width: calc(50% - 0.5em);
+  min-width: 140px;
+  box-sizing: border-box;
 }
+
 .secondary-btn:hover,
 .secondary-btn:focus {
   background: #f3960c;
@@ -391,63 +372,7 @@ footer {
   background: #000050;
 }
 
-/* ----------- Responsive Tweaks ----------- */
-@media (max-width: 900px) {
-  .pricing-table {
-    flex-direction: column;
-    align-items: center;
-  }
-  .pricing-package {
-    width: 90%;
-    max-width: 380px;
-  }
-}
-@media (max-width: 700px) {
-  .services-list {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-  .card.hero-card {
-    min-height: 150px;
-    aspect-ratio: 16 / 10;
-  }
-  .hero-card .hero-content {
-    padding: 1em 0.3em;
-  }
-  .hero-card .hero-content h1 { font-size: 1em; }
-  .hero-card .hero-content p { font-size: 0.92em; }
-  main { padding: 0.5em; }
-  .logo img {
-    height: 38px;
-  }
-  .login-wrapper {
-    padding: 0 0.2em;
-  }
-  #login-form,
-  #signup-form {
-    max-width: 99vw;
-    width: 99vw;
-  }
-  .action-buttons {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  .primary-btn, .secondary-btn {
-    font-size: 1em;
-    width: 100%;
-    min-width: 0;
-    padding: 0.8em 0;
-  }
-}
-
 /* ----------- Hamburger Menu (Mobile) ----------- */
-/* --- Base nav styles --- */
-.nav-links {
-  list-style: none;
-  gap: 2em;
-  margin: 0;
-  padding: 0;
-}
 .hamburger {
   display: flex !important;
   flex-direction: column;
@@ -457,7 +382,7 @@ footer {
   height: 44px;
   cursor: pointer;
   z-index: 9999;
-  background: red !important;
+  background: none !important;
   outline: none;
   position: relative;
 }
@@ -466,11 +391,11 @@ footer {
   display: block;
   width: 28px;
   height: 4px;
-  background: yellow !important;
-  border: 2px solid #f3960c !important;
-  margin: 4px 0;
+  background: #222;
   border-radius: 2px;
+  margin: 4px 0;
   transition: 0.3s;
+  border: none !important;
 }
 
 .hamburger.open span:nth-child(1) {
@@ -487,10 +412,9 @@ footer {
 .hamburger:hover,
 .hamburger:focus,
 .hamburger:active {
-    background: none !important;
-    box-shadow: none !important;
+  background: none !important;
+  box-shadow: none !important;
 }
-
 
 @media (max-width: 700px) {
   .logo img { height: 75px; }
@@ -527,10 +451,33 @@ footer {
     display: block;
     padding: 1em;
   }
-}
-@media (min-width: 701px) {
-  .hamburger { display: none !important;
+  .login-card {
+    max-width: 99vw;
+    padding: 1.3em 0.2em;
+    border-radius: 0.5em;
   }
+  #login-form,
+  #signup-form,
+  .action-buttons {
+    max-width: 99vw;
+    width: 99vw;
+    padding: 0 0.1em;
+  }
+  .secondary-btn {
+    width: 100%;
+    min-width: 100px;
+    margin-top: 0.5em;
+  }
+  .primary-btn, .secondary-btn {
+    font-size: 1em;
+    width: 100%;
+    min-width: 0;
+    padding: 0.8em 0;
+  }
+}
+
+@media (min-width: 701px) {
+  .hamburger { display: none !important; }
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -577,160 +524,27 @@ footer {
     transition: background 0.15s, color 0.15s;
   }
   header nav {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center content horizontally */
-  padding: .5em 2em;
-}
-
-.logo {
-  position: absolute;
-  left: 2em;
-  top: 50%;
-  transform: translateY(-50%);
-}
-}
-
-/* --- Login Card Centering Fix --- */
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.login-card {
-  max-width: 440px;
-  width: 100%;
-  margin: 3em auto 0 auto;
-  background: #01093e;
-  border-radius: 1.3em;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.14);
-  padding: 2.5em 2em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.login-card h1 {
-  color: #fff;
-  margin-bottom: 1em;
-  text-align: center;
-  font-size: 2.1em;
-  font-weight: 700;
-}
-
-/* Forms centered inside card */
-#login-form,
-#signup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-  width: 100%;
-  max-width: 340px;
-  margin: 0 auto;
-  align-items: center;
-}
-
-#login-form input,
-#signup-form input {
-  font-size: 1.1em;
-  padding: 0.9em 1.1em;
-  border-radius: 0.6em;
-  border: none;
-  background: #fff;
-  color: #222;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  border: 1px solid #eee;
-  width: 100%;
-  margin: 0;
-}
-
-.primary-btn {
-  width: 100%;
-  background: #f3960c;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.15em;
-  padding: 0.9em 0;
-  border-radius: 0.6em;
-  border: none;
-  cursor: pointer;
-  margin-top: 0.3em;
-  transition: background 0.2s;
-  display: block;
-  text-align: center;
-}
-
-.primary-btn:hover,
-.primary-btn:focus {
-  background: #e18a00;
-}
-
-/* Action buttons aligned under the form, centered */
-.action-buttons {
-  display: flex;
-  gap: 1em;
-  justify-content: center;
-  margin: 1em auto 0 auto;
-  width: 100%;
-  max-width: 340px;
-  flex-wrap: wrap;
-}
-
-.secondary-btn {
-  background: #fff;
-  color: #f3960c;
-  border: 2px solid #f3960c;
-  font-weight: bold;
-  padding: 0.7em 1.5em;
-  border-radius: 0.6em;
-  cursor: pointer;
-  font-size: 1em;
-  margin-top: 0.2em;
-  transition: background 0.2s, color 0.2s;
-  width: calc(50% - 0.5em);
-  min-width: 140px;
-  box-sizing: border-box;
-}
-.secondary-btn:hover,
-.secondary-btn:focus {
-  background: #f3960c;
-  color: #fff;
-}
-
-#login-message {
-  color: #fff;
-  margin-top: 1em;
-  min-height: 2em;
-  text-align: center;
-  font-size: 1.1em;
-}
-
-/* --- Mobile responsive tweaks --- */
-@media (max-width: 600px) {
-  .login-card {
-    max-width: 99vw;
-    padding: 1.3em 0.2em;
-    border-radius: 0.5em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5em 2em;
   }
-  #login-form,
-  #signup-form,
-  .action-buttons {
-    max-width: 99vw;
-    width: 99vw;
-    padding: 0 0.1em;
-  }
-  .secondary-btn {
-    width: 100%;
-    min-width: 100px;
-    margin-top: 0.5em;
+  .logo {
+    position: absolute;
+    left: 2em;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
-
-
-
-
-
+@media (max-width: 900px) {
+  .pricing-table {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pricing-package {
+    width: 90%;
+    max-width: 380px;
+  }
+}
