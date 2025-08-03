@@ -21,7 +21,7 @@ header nav {
   position: relative;
   min-height: 80px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  overflow: hidden;
+  overflow: visible;
   z-index: 3001;
 }
 header nav::after {
@@ -394,7 +394,10 @@ footer {
 /* --- Mobile nav --- */
 @media (max-width: 700px) {
   .logo img { height: 38px; }
-  .hamburger { display: flex; }
+  .hamburger { 
+    display: flex;
+    z-index: 4001; 
+  }
   .nav-links {
     flex-direction: column;
     align-items: center;
