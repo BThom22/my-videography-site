@@ -364,8 +364,8 @@ footer {
   align-items: center;
   width: 44px;
   height: 44px;
-  background: #fff;    /* TEMP: white for visibility */
-  border: 1px solid #222;
+  background: transparent;    /* TEMP: white for visibility */
+  border: none;
   cursor: pointer;
   z-index: 9999;
   position: relative;
