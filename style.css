@@ -68,6 +68,20 @@ header nav > * {
   outline: none;
   transform: scale(1.15);
 }
+.youtube-icon {
+  color: #fff;
+  font-size: 2em;
+  margin-left: 1.5em;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.youtube-icon:hover,
+.youtube-icon:focus {
+  color: #f3960c;
+  text-shadow: 0 2px 12px #000;
+}
 
 /* ----------- Main Content Styles ----------- */
 main {
@@ -448,6 +462,11 @@ footer {
     width: 100%;
     min-width: 0;
     padding: 0.8em 0;
+  }
+   .youtube-icon {
+    font-size: 2em;
+    margin-left: 1em;
+    margin-top: 0.2em;
   }
 }
 
