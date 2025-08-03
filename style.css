@@ -463,6 +463,13 @@ footer {
     background: #f3960c;
     color: #fff;
   }
+  .nav-links a.active,
+  .nav-links a.active:visited {
+  background: #f3960c;    /* Highlight color */
+  color: #fff !important; /* Ensure readable */
+  cursor: default;
+}
+
 }
 
 
