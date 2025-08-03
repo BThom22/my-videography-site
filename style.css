@@ -1,4 +1,9 @@
 /* ----------- Base Styles ----------- */
+header {
+  position: relative;
+  z-index: 3000;
+}
+
 body {
   font-family: 'Inter', Arial, sans-serif;
   background: #ffffff;
