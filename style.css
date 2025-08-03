@@ -455,7 +455,7 @@ footer {
     color: #fff;           /* make sure links are readable */
     font-weight: 600;
     background: none;
-    border-radius: 1em;
+    border-radius: 5px;
     padding: 0.3em 1em;
     transition: background 0.2s, color 0.2s;
   }
