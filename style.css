@@ -367,6 +367,8 @@ footer {
   cursor: pointer;
   z-index: 9999;
   position: relative;
+  background: none !important;
+  color: inherit;
 }
 
 .hamburger span {
@@ -378,6 +380,15 @@ footer {
   border-radius: 2px;
   transition: .3s;
 }
+
+.hamburger,
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+    background: none !important;
+    box-shadow: none !important;
+}
+
 
 @media (max-width: 700px) {
   .logo img { height: 38px; }
