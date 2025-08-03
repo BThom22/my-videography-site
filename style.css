@@ -134,20 +134,34 @@ iframe {
 }
 
 /* ----------- Forms/Inputs ----------- */
-.login-wrapper {
+.login-card {
+  max-width: 500px;
+  width: 100%;
+  margin: 2em auto;
+  background: #01093e;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 2.5em 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 420px;
-  margin: 0 auto;
+}
+
+.login-wrapper {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-wrapper h1 {
-  text-align: center;
+  color: #fff;
   margin-bottom: 1em;
-  color: #fff
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
 }
+
 
 #login-form,
 #signup-form {
