@@ -358,29 +358,29 @@ footer {
   padding: 0;
 }
 .hamburger {
-  display: none;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
-  background: transparent;    /* TEMP: white for visibility */
-  border: none;
+  background: rgba(255,0,0,0.1); /* TEMP: light red for testing */
+  border: 2px solid #000;        /* TEMP: black border for testing */
   cursor: pointer;
   z-index: 9999;
-  position: fixed;
-  top: 30px;
-  right: 30px;
+  position: relative;
 }
+
 .hamburger span {
   display: block;
   width: 28px;
   height: 4px;
-  background: #222;
+  background: #222;       /* Dark bars for visibility */
   margin: 4px 0;
   border-radius: 2px;
   transition: .3s;
 }
+
 @media (max-width: 700px) {
   .logo img { height: 38px; }
   .hamburger {
