@@ -71,10 +71,12 @@ header nav > * {
 
 /* ----------- Main Content Styles ----------- */
 main {
-  margin: 2em 0;
-  padding: 0;
-  background: none;
-  box-shadow: none;
+  max-width: 850px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #01093e;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 h1, h2, h3, blockquote {
   color: #ffffff;
