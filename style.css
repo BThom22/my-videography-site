@@ -358,7 +358,7 @@ footer {
   padding: 0;
 }
 .hamburger {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -366,36 +366,38 @@ footer {
   height: 44px;
   cursor: pointer;
   z-index: 9999;
-  position: relative;
   background: none !important;
-  color: inherit;
   border: none;
   outline: none;
-  box-shadow: none !important;
-}
-
-.hamburger:focus {
-  outline: 2px solid #f3960c; /* for accessibility */
+  position: relative;
 }
 
 .hamburger span {
   display: block;
   width: 28px;
   height: 4px;
-  background: #fff;
+  background: #fff; /* <-- This is black. You can use #fff if your nav is dark */
   margin: 4px 0;
   border-radius: 2px;
-  transition: 0.3s cubic-bezier(.4,0,.2,1);
+  transition: 0.3s;
 }
 
 .hamburger.open span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 .hamburger.open span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.hamburger,
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+    background: none !important;
+    box-shadow: none !important;
 }
 
 
