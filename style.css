@@ -402,7 +402,7 @@ footer {
 
 
 @media (max-width: 700px) {
-  .logo img { height: 50px; }
+  .logo img { height: 75px; }
   .hamburger {
     display: flex !important;
   }
