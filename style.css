@@ -438,8 +438,31 @@ footer {
   }
 }
 @media (min-width: 701px) {
-  .hamburger { display: none !important; }
-  .nav-links { display: flex; flex-direction: row; align-items: center; }
+  .hamburger { display: none !important;
+  }
+  .nav-links { display: flex; 
+    flex-direction: row; 
+    align-items: center;
+    gap: 2em;
+    background: rgba(1,9,62,0.96);  /* Change color as needed */
+    padding: 0.4em 2em;
+    border-radius: 2em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    height: 48px;
+    margin-left: 1.5em;  /* adjust for spacing from logo */ 
+  }
+  .nav-links a {
+    color: #fff;           /* make sure links are readable */
+    font-weight: 600;
+    background: none;
+    border-radius: 1em;
+    padding: 0.3em 1em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-links a:hover {
+    background: #f3960c;
+    color: #fff;
+  }
 }
 
 
