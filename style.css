@@ -485,6 +485,20 @@ footer {
     color: #fff !important;
     transition: background 0.15s, color 0.15s;
   }
+  header nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  padding: .5em 2em;
+}
+
+.logo {
+  position: absolute;
+  left: 2em;
+  top: 50%;
+  transform: translateY(-50%);
+}
 }
 
 
