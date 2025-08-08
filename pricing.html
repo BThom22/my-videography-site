@@ -3,30 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>True North Media</title>
-  <meta name="description" content="Film & photo for brands, weddings, and events.">
+  <title>Pricing – True North Media</title>
+
+  <!-- Bootstrap (dark) -->
   <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="index.css">
-  <!-- Optional favicon -->
-  <!-- <link rel="icon" href="favicon.ico"> -->
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="pricing.css">
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVBAR (your existing site navbar) -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
-        <img src="./truenorthminlogo.png" alt="Brand Logo" style="height:30px; margin-right:10px;">
-        True North Media
-      </a>
+      <a class="navbar-brand fw-bold" href="index.html">True North Media</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
           <li class="nav-item"><a class="nav-link" href="login.html">Client Login</a></li>
         </ul>
@@ -34,335 +28,213 @@
     </div>
   </nav>
 
-  <!-- PRICING -->
-<section class="container py-5" id="pricing">
-  <!-- Row 1 -->
-  <h2 class="fw-bold text-center mb-4">Videography & Editing Packages</h2>
-  <div class="row g-4 justify-content-center">
-    <!-- Starter -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Starter</h3>
-          <div class="tn-price">$500 <span>/ 2 hours</span></div>
-          <ul class="tn-list">
-            <li>Up to 2 hours on-location filming</li>
-            <li>Basic edit (up to 2 minute video)</li>
-            <li>Basic color grading</li>
-            <li>Standard music licensing</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+  <main class="pricing-page container">
+    <!-- ROW 1 -->
+    <h1 class="section-title">Videography &amp; Editing Packages</h1>
+    <div class="row g-4 justify-content-center">
+      <!-- Starter -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Starter</h3>
+            <div class="tn-price">$500 <span>/ 2 hours</span></div>
+            <ul class="tn-list">
+              <li>Up to 2 hours on-location filming</li>
+              <li>Basic edit (up to 2 minute video)</li>
+              <li>Basic color grading</li>
+              <li>Standard music licensing</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard (featured) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card tn-featured h-100 position-relative">
+          <div class="tn-badge">MOST POPULAR</div>
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Standard</h3>
+            <div class="tn-price">$1250 <span>/ 4 hours</span></div>
+            <ul class="tn-list">
+              <li>Up to 4 hours on-location filming</li>
+              <li>Comprehensive edit (up to 5 minute video)</li>
+              <li>Advanced color grading</li>
+              <li>Motion graphics (titles, lower thirds)</li>
+              <li>Premium music licensing</li>
+              <li>2 revisions</li>
+            </ul>
+            <a class="btn tn-btn-gradient mt-auto" href="booking.html">Book This Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Premium</h3>
+            <div class="tn-price">$2500 <span>/ 8 hours</span></div>
+            <ul class="tn-list">
+              <li>Full day shoot (up to 8 hours)</li>
+              <li>Cinematic edit (up to 10 minute video)</li>
+              <li>Professional color grading</li>
+              <li>Advanced motion graphics &amp; animation</li>
+              <li>Premium music licensing &amp; sound design</li>
+              <li>3 revisions</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Standard (featured) -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card tn-featured h-100 position-relative">
-        <div class="tn-badge">MOST POPULAR</div>
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Standard</h3>
-          <div class="tn-price">$1250 <span>/ 4 hours</span></div>
-          <ul class="tn-list">
-            <li>Up to 4 hours on-location filming</li>
-            <li>Comprehensive edit (up to 5 minute video)</li>
-            <li>Advanced color grading</li>
-            <li>Motion graphics (titles, lower thirds)</li>
-            <li>Premium music licensing</li>
-            <li>2 revisions</li>
-          </ul>
-          <a class="btn tn-btn-gradient mt-auto" href="booking.html">Book This Package</a>
+    <!-- ROW 2 -->
+    <h2 class="section-title">Short-Form Video Packages</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Starter -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Starter</h3>
+            <div class="tn-price">$200 <span>/ 1 hour</span></div>
+            <ul class="tn-list">
+              <li>Up to 1 hour on-location filming</li>
+              <li>Edited 60 second video</li>
+              <li>Basic color grading</li>
+              <li>Standard music licensing</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Standard (featured) -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card tn-featured h-100 position-relative">
+          <div class="tn-badge">MOST POPULAR</div>
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Standard</h3>
+            <div class="tn-price">$500 <span>/ 2 hours</span></div>
+            <ul class="tn-list">
+              <li>Up to 2 hours on-location filming</li>
+              <li>Edited video up to 90 seconds</li>
+              <li>Advanced color grading</li>
+              <li>Motion graphics (titles, lower thirds)</li>
+              <li>Premium music licensing</li>
+              <li>1 revision</li>
+            </ul>
+            <a class="btn tn-btn-gradient mt-auto" href="booking.html">Book This Package</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Premium</h3>
+            <div class="tn-price">$750 <span>/ 4 hours</span></div>
+            <ul class="tn-list">
+              <li>Up to 4 hours on-location filming</li>
+              <li>Edited videos 3 × 60 seconds</li>
+              <li>Professional color grading</li>
+              <li>Advanced motion graphics &amp; animation</li>
+              <li>Premium music licensing &amp; sound design</li>
+              <li>2 revisions</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Premium -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Premium</h3>
-          <div class="tn-price">$2500 <span>/ 8 hours</span></div>
-          <ul class="tn-list">
-            <li>Full day shoot (up to 8 hours)</li>
-            <li>Cinematic edit (up to 10 minute video)</li>
-            <li>Professional color grading</li>
-            <li>Advanced motion graphics & animation</li>
-            <li>Premium music licensing & sound design</li>
-            <li>3 revisions</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+    <!-- ROW 3 -->
+    <h2 class="section-title">Retainer &amp; Subscription Services</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Monthly Video Package(s)</h3>
+            <div class="tn-sub">From $1,000 to $5,000 / month</div>
+            <ul class="tn-list">
+              <li><strong>Starter:</strong> (2) Starter Videos + (2) Basic Short-Form Videos</li>
+              <li><strong>Standard:</strong> (2) Standard Videos + (2) Standard Short-Form Videos</li>
+              <li><strong>Premium:</strong> (2) Premium Videos + (2) Premium Short-Form Videos</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Contact for Pricing</a>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Row 2 -->
-  <h2 class="fw-bold text-center mt-5 mb-4">Short-Form Video Packages</h2>
-  <div class="row g-4 justify-content-center">
-    <!-- Starter -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Starter</h3>
-          <div class="tn-price">$200 <span>/ 1 hour</span></div>
-          <ul class="tn-list">
-            <li>Up to 1 hour on-location filming</li>
-            <li>Edited 60 second video</li>
-            <li>Basic color grading</li>
-            <li>Standard music licensing</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Standard (featured) -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card tn-featured h-100 position-relative">
-        <div class="tn-badge">MOST POPULAR</div>
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Standard</h3>
-          <div class="tn-price">$500 <span>/ 2 hours</span></div>
-          <ul class="tn-list">
-            <li>Up to 2 hours on-location filming</li>
-            <li>Edited video up to 90 seconds</li>
-            <li>Advanced color grading</li>
-            <li>Motion graphics (titles, lower thirds)</li>
-            <li>Premium music licensing</li>
-            <li>1 revision</li>
-          </ul>
-          <a class="btn tn-btn-gradient mt-auto" href="booking.html">Book This Package</a>
+      <div class="col-12 col-md-6 col-lg-5">
+        <div class="tn-card h-100">
+          <div class="tn-body d-flex flex-column">
+            <h3 class="tn-title">Social Media Content Package</h3>
+            <div class="tn-sub">Consultation required</div>
+            <ul class="tn-list">
+              <li>(2) Standard Short-Form Videos per week</li>
+              <li>(2) Standard Videos per month</li>
+              <li>Monthly content planning &amp; scheduling</li>
+              <li>Weekly custom graphics</li>
+              <li>Basic monitoring of comments &amp; messages</li>
+              <li>Monthly performance reporting</li>
+            </ul>
+            <a class="btn btn-outline-light mt-auto" href="booking.html">Contact for Pricing</a>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Premium -->
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Premium</h3>
-          <div class="tn-price">$750 <span>/ 4 hours</span></div>
-          <ul class="tn-list">
-            <li>Up to 4 hours on-location filming</li>
-            <li>Edited videos 3 × 60 seconds</li>
-            <li>Professional color grading</li>
-            <li>Advanced motion graphics & animation</li>
-            <li>Premium music licensing & sound design</li>
-            <li>2 revisions</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Book This Package</a>
+    <!-- INCLUDED -->
+    <section class="included-wrap">
+      <div class="included">
+        <h2>What's Included in Every Package</h2>
+        <div class="included-grid">
+          <div class="included-item">📹 Professional 4K filming</div>
+          <div class="included-item">✂️ Expert post‑production editing</div>
+          <div class="included-item">🎵 Licensed background music</div>
+          <div class="included-item">☁️ Digital delivery & downloads</div>
+          <div class="included-item">🎧 Dedicated customer support</div>
+          <div class="included-item">🔄 One round of revisions</div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- Row 3 (centered two) -->
-  <h2 class="fw-bold text-center mt-5 mb-4">Retainer & Subscription Services</h2>
-  <div class="row g-4 justify-content-center">
-    <div class="col-12 col-md-6 col-lg-5">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Monthly Video Package(s)</h3>
-          <div class="tn-sub">From $1,000 to $5,000 / month</div>
-          <ul class="tn-list">
-            <li><strong>Starter:</strong> (2) Starter Videos + (2) Basic Short-Form Videos</li>
-            <li><strong>Standard:</strong> (2) Standard Videos + (2) Standard Short-Form Videos</li>
-            <li><strong>Premium:</strong> (2) Premium Videos + (2) Premium Short-Form Videos</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Contact for Pricing</a>
+    <!-- FAQ -->
+    <section class="faq-wrap">
+      <h2 class="text-center fw-bold mb-3">Frequently Asked Questions</h2>
+
+      <details class="faq">
+        <summary>How far in advance should I book?</summary>
+        <div class="faq-body">
+          We recommend booking at least 4–6 weeks in advance, especially for weddings. We can often accommodate last‑minute bookings depending on availability.
         </div>
-      </div>
-    </div>
+      </details>
 
-    <div class="col-12 col-md-6 col-lg-5">
-      <div class="tn-card h-100">
-        <div class="tn-body d-flex flex-column">
-          <h3 class="tn-title">Social Media Content Package</h3>
-          <div class="tn-sub">Consultation required</div>
-          <ul class="tn-list">
-            <li>(2) Standard Short-Form Videos per week</li>
-            <li>(2) Standard Videos per month</li>
-            <li>Monthly content planning & scheduling</li>
-            <li>Weekly custom graphics</li>
-            <li>Basic monitoring of comments & messages</li>
-            <li>Monthly performance reporting</li>
-          </ul>
-          <a class="btn btn-outline-light mt-auto" href="booking.html">Contact for Pricing</a>
+      <details class="faq">
+        <summary>What's the typical delivery time?</summary>
+        <div class="faq-body">
+          Most projects are delivered within 2–4 weeks, depending on complexity.
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- What's Included Section -->
-<section class="included-section">
-  <div class="included-container">
-    <h2>What's Included in Every Package</h2>
-    <div class="included-grid">
-      <div class="included-item">📹 Professional 4K filming</div>
-      <div class="included-item">✂️ Expert post-production editing</div>
-      <div class="included-item">🎵 Licensed background music</div>
-      <div class="included-item">☁️ Digital delivery & downloads</div>
-      <div class="included-item">🎧 Dedicated customer support</div>
-      <div class="included-item">🔄 One round of revisions</div>
-    </div>
-  </div>
-</section>
+      </details>
 
-<!-- FAQ Section -->
-<section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+      <details class="faq">
+        <summary>Do you travel for events?</summary>
+        <div class="faq-body">
+          Yes, we travel. Additional travel costs may apply based on distance.
+        </div>
+      </details>
 
-  <div class="faq-item">
-    <button class="faq-question">How far in advance should I book?</button>
-    <div class="faq-answer">
-      <p>We recommend booking at least 4–6 weeks in advance, especially for weddings. We can often accommodate last-minute bookings depending on availability.</p>
-    </div>
-  </div>
+      <details class="faq">
+        <summary>What if I need additional hours?</summary>
+        <div class="faq-body">
+          Additional hours can be added to any package at an hourly rate.
+        </div>
+      </details>
+    </section>
+  </main>
 
-  <div class="faq-item">
-    <button class="faq-question">What's the typical delivery time?</button>
-    <div class="faq-answer">
-      <p>Most projects are delivered within 2–4 weeks, depending on complexity.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Do you travel for events?</button>
-    <div class="faq-answer">
-      <p>Yes, we travel. Additional travel costs may apply based on distance.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">What if I need additional hours?</button>
-    <div class="faq-answer">
-      <p>Additional hours can be added to any package at an hourly rate.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CSS -->
-<style>
-.included-section {
-  background-color: #1e1f26;
-  padding: 2rem;
-  border-radius: 8px;
-  margin-top: 2rem;
-}
-
-.included-section h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.included-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.included-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #2a2b33;
-  padding: 0.75rem;
-  border-radius: 6px;
-  color: #ccc;
-  font-size: 1rem;
-}
-
-.faq-section {
-  margin-top: 2rem;
-}
-
-.faq-section h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #fff;
-}
-
-.faq-item {
-  border-bottom: 1px solid #333;
-}
-
-.faq-question {
-  width: 100%;
-  text-align: left;
-  padding: 1rem;
-  font-size: 1rem;
-  background: none;
-  border: none;
-  color: #b5aaff;
-  cursor: pointer;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: #2a2b33;
-}
-
-.faq-answer p {
-  padding: 1rem;
-  margin: 0;
-  color: #ccc;
-}
-
-.faq-item.active .faq-answer {
-  max-height: 500px; /* Enough space for text */
-}
-</style>
-
-<!-- JavaScript for FAQ Accordion -->
-<script>
-document.querySelectorAll(".faq-question").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const item = btn.parentElement;
-    item.classList.toggle("active");
-  });
-});
-</script>
-
-
-<style>
-  /* Card shell */
-  .tn-card{
-    background:#1f2128; border:1px solid #2a2d35; border-radius:18px;
-    box-shadow:0 12px 28px rgba(0,0,0,.25);
-    height:100%;
-  }
-  .tn-body{ padding:2rem; }
-  .tn-title{ font-weight:800; font-size:1.6rem; margin:0 0 .25rem; }
-  .tn-price{ font-weight:900; font-size:2.6rem; color:#bba7ff; margin-bottom:.5rem; }
-  .tn-price span{ font-size:1.05rem; font-weight:600; color:#98a1ad; }
-  .tn-sub{ color:#98a1ad; margin-bottom:.75rem; }
-
-  /* Green check bullets */
-  .tn-list{ list-style:none; padding-left:0; margin:1rem 0 1.5rem; }
-  .tn-list li{
-    position:relative; padding-left:1.8rem; margin:.5rem 0; color:#d6d9e0;
-  }
-  .tn-list li::before{
-    content:"✓"; position:absolute; left:0; top:0; line-height:1;
-    font-weight:900; font-size:1.15rem; color:#22c55e;
-  }
-
-  /* Featured card */
-  .tn-featured{ border-color:#6f63ff; box-shadow:0 18px 40px rgba(111,99,255,.28); }
-  .tn-badge{
-    position:absolute; left:50%; top:-12px; transform:translateX(-50%);
-    background:#6f63ff; color:#fff; font-weight:800; font-size:.8rem;
-    padding:.35rem .9rem; border-radius:999px; box-shadow:0 8px 20px rgba(111,99,255,.35);
-  }
-  .tn-btn-gradient{
-    background:linear-gradient(90deg,#6f63ff,#b796ff); color:#fff; border:0;
-  }
-  .tn-btn-gradient:hover{ filter:brightness(1.05); }
-
-  @media (max-width:576px){ .tn-price{ font-size:2.1rem; } }
-</style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Offset for fixed navbar (tweak if your navbar is taller) */
+.pricing-page { padding-top: 96px; padding-bottom: 48px; }
+
+/* Section headings */
+.section-title {
+  font-weight: 800;
+  text-align: center;
+  margin: 2rem 0 1.25rem;
+}
+
+/* Cards */
+.tn-card{
+  background:#1f2128;
+  border:1px solid #2a2d35;
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+  height:100%;
+}
+.tn-body{ padding:2rem; }
+.tn-title{ font-weight:800; font-size:1.6rem; margin:0 0 .25rem; }
+.tn-price{ font-weight:900; font-size:2.6rem; color:#bba7ff; margin-bottom:.5rem; }
+.tn-price span{ font-size:1.05rem; font-weight:600; color:#98a1ad; }
+.tn-sub{ color:#98a1ad; margin-bottom:.75rem; }
+
+/* Green check bullets */
+.tn-list{ list-style:none; padding-left:0; margin:1rem 0 1.5rem; }
+.tn-list li{
+  position:relative; padding-left:1.8rem; margin:.5rem 0; color:#d6d9e0;
+}
+.tn-list li::before{
+  content:"✓"; position:absolute; left:0; top:0; line-height:1;
+  font-weight:900; font-size:1.15rem; color:#22c55e;
+}
+
+/* Featured card style + badge */
+.tn-featured{ border-color:#6f63ff; box-shadow:0 18px 40px rgba(111,99,255,.28); }
+.tn-badge{
+  position:absolute; left:50%; top:-12px; transform:translateX(-50%);
+  background:#6f63ff; color:#fff; font-weight:800; font-size:.8rem;
+  padding:.35rem .9rem; border-radius:999px; box-shadow:0 8px 20px rgba(111,99,255,.35);
+}
+.tn-btn-gradient{
+  background:linear-gradient(90deg,#6f63ff,#b796ff);
+  color:#fff; border:0;
+}
+.tn-btn-gradient:hover{ filter:brightness(1.05); }
+
+/* Included block */
+.included-wrap{ margin-top:3rem; }
+.included{
+  background:#1e1f26; border-radius:12px; padding:2rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);
+}
+.included h2{ text-align:center; margin:0 0 1.25rem; }
+.included-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:12px;
+}
+.included-item{
+  background:#2a2b33; color:#cfd3da; padding:.8rem 1rem;
+  border-radius:8px;
+}
+
+/* FAQ (no JS needed) */
+.faq-wrap{ margin:2.25rem 0 1rem; }
+.faq{
+  background:#1f2128; border:1px solid #2a2d35; border-radius:10px; margin-bottom:10px;
+}
+.faq > summary{
+  cursor:pointer; list-style:none; padding:1rem 1.2rem; font-weight:600;
+  background:#2a2b33; border-radius:10px;
+}
+.faq[open] > summary{ background:#cbc2ff22; }
+.faq > summary::-webkit-details-marker{ display:none; }
+.faq-body{ padding:1rem 1.2rem; color:#cfd3da; }
+
+/* Responsive type tweaks */
+@media (max-width: 576px){
+  .tn-price{ font-size:2.1rem; }
+  .section-title{ font-size:1.6rem; }
+}
