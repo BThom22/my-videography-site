@@ -10,6 +10,19 @@ body {
 /* Navbar */
 .navbar {
   transition: background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: visible;
+  background-color: #0f1626; 
+}
+
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("./banner.svg") center / cover no-repeat;
+  opacity: 1;                /* adjust if you want subtler */
+  transition: background-size .35s ease, opacity .2s ease;
 }
 
 .navbar-dark .navbar-brand {
@@ -76,4 +89,30 @@ body {
   .card-body {
     padding: 1.5rem;
   }
+}
+
+/* Desktop baseline */
+@media (min-width: 992px) {
+  .navbar::before {
+    background-size: 100% 100%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar::before {
+    background-size: 140% auto; /* a bit zoomed-in by default */
+  }
+  /* When the hamburger menu expands, zoom the background a bit more */
+  .navbar .navbar-collapse.show ~ .navbar::before { /* won't select siblings; use body class instead */
+    /* fallback handled below via body class */
+  }
+}
+
+body.nav-open .navbar::before {
+  background-size: 180% auto;  /* “expand” effect */
+}
+
+/* Optional: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .navbar::before { transition: none; }
 }
