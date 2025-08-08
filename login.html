@@ -94,5 +94,15 @@
   <!-- Firebase -->
   <script type="module" src="./firebase-config.js"></script>
   <script type="module" src="./auth.js"></script>
+  <script>
+  (function () {
+    const toggler = document.querySelector('.navbar-toggler');
+    const collapse = document.querySelector('#nav'); // update if your collapse ID is different
+    if (!toggler || !collapse) return;
+
+    collapse.addEventListener('shown.bs.collapse', () => document.body.classList.add('nav-open'));
+    collapse.addEventListener('hidden.bs.collapse', () => document.body.classList.remove('nav-open'));
+  })();
+</script>
 </body>
 </html>
