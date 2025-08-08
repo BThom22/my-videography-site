@@ -116,3 +116,48 @@ body.nav-open .navbar::before {
 @media (prefers-reduced-motion: reduce) {
   .navbar::before { transition: none; }
 }
+
+/* Full-bleed navbar background */
+.navbar {
+  position: relative;
+  background-color: #0f1626; /* fallback */
+}
+
+/* The background layer spans the entire viewport, not just the .container */
+.navbar .nav-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);     /* center the 100vw box within the navbar */
+  width: 100vw;                    /* full viewport width */
+  height: 100%;
+  z-index: 0;
+  background: url("./banner.svg") center / cover no-repeat;
+  opacity: 1;                      /* tweak if you want subtler */
+  transition: background-size .35s ease, opacity .2s ease;
+}
+
+/* Make sure navbar content sits above the bg */
+.navbar > *:not(.nav-bg) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop baseline */
+@media (min-width: 992px) {
+  .navbar .nav-bg { background-size: 100% 100%; }
+}
+
+/* Mobile baseline (slightly zoomed in) */
+@media (max-width: 991.98px) {
+  .navbar .nav-bg { background-size: 140% auto; }
+}
+
+/* When hamburger opens, “expand” the background */
+body.nav-open .navbar .nav-bg { background-size: 180% auto; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar .nav-bg { transition: none; }
+}
+
