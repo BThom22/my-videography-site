@@ -15,15 +15,6 @@ body {
   background-color: #0f1626; 
 }
 
-.navbar::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("./banner.svg") center / cover no-repeat;
-  opacity: 1;                /* adjust if you want subtler */
-  transition: background-size .35s ease, opacity .2s ease;
-}
 
 .navbar-dark .navbar-brand {
   font-weight: bold;
@@ -132,7 +123,7 @@ body.nav-open .navbar::before {
   width: 100vw;                    /* full viewport width */
   height: 100%;
   z-index: 0;
-  background: url("./banner.svg") center / cover no-repeat;
+  background: url("./") center / cover no-repeat;
   opacity: 1;                      /* tweak if you want subtler */
   transition: background-size .35s ease, opacity .2s ease;
 }
