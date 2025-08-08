@@ -193,6 +193,141 @@
     </div>
   </div>
 </section>
+<!-- What's Included Section -->
+<section class="included-section">
+  <div class="included-container">
+    <h2>What's Included in Every Package</h2>
+    <div class="included-grid">
+      <div class="included-item">📹 Professional 4K filming</div>
+      <div class="included-item">✂️ Expert post-production editing</div>
+      <div class="included-item">🎵 Licensed background music</div>
+      <div class="included-item">☁️ Digital delivery & downloads</div>
+      <div class="included-item">🎧 Dedicated customer support</div>
+      <div class="included-item">🔄 One round of revisions</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">How far in advance should I book?</button>
+    <div class="faq-answer">
+      <p>We recommend booking at least 4–6 weeks in advance, especially for weddings. We can often accommodate last-minute bookings depending on availability.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What's the typical delivery time?</button>
+    <div class="faq-answer">
+      <p>Most projects are delivered within 2–4 weeks, depending on complexity.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you travel for events?</button>
+    <div class="faq-answer">
+      <p>Yes, we travel. Additional travel costs may apply based on distance.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">What if I need additional hours?</button>
+    <div class="faq-answer">
+      <p>Additional hours can be added to any package at an hourly rate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+.included-section {
+  background-color: #1e1f26;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.included-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.included-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2a2b33;
+  padding: 0.75rem;
+  border-radius: 6px;
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.faq-section {
+  margin-top: 2rem;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.faq-item {
+  border-bottom: 1px solid #333;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #b5aaff;
+  cursor: pointer;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #2a2b33;
+}
+
+.faq-answer p {
+  padding: 1rem;
+  margin: 0;
+  color: #ccc;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* Enough space for text */
+}
+</style>
+
+<!-- JavaScript for FAQ Accordion -->
+<script>
+document.querySelectorAll(".faq-question").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const item = btn.parentElement;
+    item.classList.toggle("active");
+  });
+});
+</script>
+
 
 <style>
   /* Card shell */
