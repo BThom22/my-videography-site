@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Send Client Invite</title>
+
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">True North Media</a>
+    </div>
+  </nav>
+
+  <main class="container py-5" style="max-width: 880px;">
+    <!-- Shown while we check auth -->
+    <div id="checking" class="text-muted mb-3">Checking admin access…</div>
+
+    <!-- Shown if not authorized -->
+    <div id="notAuth" class="card border-0 shadow-lg mb-4" style="display:none;">
+      <div class="card-body p-4">
+        <h3 class="mb-2">Admin access required</h3>
+        <p class="text-muted mb-3">Sign in with your admin account to use this tool.</p>
+        <a href="login.html" class="btn btn-primary">Go to login</a>
+      </div>
+    </div>
+
+    <!-- Invite tool (visible to admins only) -->
+    <div id="inviteCard" class="card border-0 shadow-lg" style="display:none;">
+      <div class="card-body p-4">
+        <h2 class="mb-2">Send Client Invite</h2>
+        <p class="text-muted mb-3">Send a one-time sign-in link (no password).</p>
+
+        <form id="inviteForm" class="row gy-2" autocomplete="off">
+          <div class="col-12 col-md-6">
+            <input id="inviteEmail" type="email" class="form-control"
+                   placeholder="client@example.com" required autocomplete="email">
+          </div>
+          <div class="col-12 col-md-3">
+            <button class="btn btn-primary w-100" type="submit">Send Invite</button>
+          </div>
+          <div class="col-12">
+            <p id="inviteMsg" class="mt-2"></p>
+          </div>
+        </form>
+
+        <hr class="my-4">
+        <div class="small text-muted">
+          Invites land on <code>finish.html</code> to complete sign-in, then redirect to your dashboard.
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="invite.js"></script>
+</body>
+</html>

@@ -1,95 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>True North Media | Videography</title>
-  <link rel="stylesheet" href="./style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>True North Media</title>
+  <meta name="description" content="Film & photo for brands, weddings, and events.">
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="./compass flower.png">
-  <meta property="og:title" content="True North Media | Videography">
-  <meta property="og:description" content="Modern videography for brands, events, and creatives.">
-  <meta property="og:image" content="https://true-north.media/ogimage.png">
-  <meta property="og:url" content="https://true-north.media/">
-  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <!-- Optional favicon -->
+  <!-- <link rel="icon" href="favicon.ico"> -->
 </head>
 <body>
-  <header>
-<header>
-  <nav>
-    <div class="logo">
-      <img src="./truenorthlogo.png" alt="Logo" />
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <img src="./truenorthminlogo.png" alt="Brand Logo" style="height:30px; margin-right:10px;">
+        True North Media
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Client Login</a></li>
+        </ul>
+      </div>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="booking.html">Book</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-    <a
-      href="https://www.youtube.com/@NomadDigital21" 
-      target="_blank" 
-      rel="noopener" 
-      class="youtube-icon"
-      aria-label="Visit our YouTube channel"
-    >
-      <i class="fab fa-youtube"></i>
-    </a>
   </nav>
-</header>
 
-
+  <!-- HERO -->
+  <header class="container mt-5 pt-5">
+    <div class="row align-items-center py-5">
+      <div class="col-lg-6">
+        <h1 class="fw-bold display-5">Capturing Life's Most Cinematic Moments</h1>
+        <p class="lead text-muted mt-3">Story-driven films and bold imagery for weddings, brands, and events.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="booking.html" class="btn btn-primary btn-lg">Book a Date</a>
+          <a href="pricing.html" class="btn btn-outline-light btn-lg">View Pricing</a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+       <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+        <video autoplay loop muted playsinline>
+            <source src="./stlouisstufffinal.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        </div>
+      </div>
+    </div>
   </header>
-  <main>
- <section class="card hero-card">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="./stlouisstufffinal.mov" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="hero-content">
-    <h1>Capturing Stories, One Frame at a Time</h1>
-    <p>Modern videography for brands, events, and creatives.</p>
-    <a href="booking.html" class="cta">Book a Session</a>
+
+  <!-- SERVICES -->
+  <section class="py-5 bg-dark text-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Services</h2>
+    <div class="row g-4">
+      
+      <!-- Weddings -->
+      <div class="col-md-4">
+        <div class="card service-card text-center shadow-sm p-4 border-0">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-ring"></i>
+          </div>
+          <h5 class="fw-bold">Weddings</h5>
+          <p>Capture your special day with cinematic storytelling that lasts a lifetime.</p>
+        </div>
+      </div>
+      
+      <!-- Brand/Commercial -->
+      <div class="col-md-4">
+        <div class="card service-card text-center shadow-sm p-4 border-0">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h5 class="fw-bold">Brand & Commercial</h5>
+          <p>Engaging content that connects your brand with your audience.</p>
+        </div>
+      </div>
+      
+      <!-- Events -->
+      <div class="col-md-4">
+        <div class="card service-card text-center shadow-sm p-4 border-0">
+          <div class="icon-wrapper mb-3">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <h5 class="fw-bold">Events</h5>
+          <p>From concerts to corporate events, we capture every unforgettable moment.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
-<section class="services">
-  <h2>Services</h2>
-  <ul class="services-list">
-    <li><i class="fa-solid fa-video"></i> Event Videography</li>
-    <li><i class="fa-solid fa-bullhorn"></i> Brand Videos</li>
-    <li><i class="fa-solid fa-clapperboard"></i> Short Form Content</li>
-    <li><i class="fa-solid fa-share-nodes"></i> Social Media Management</li>
-  </ul>
-</section>
 
 
-    <section class="featured-work">
-      <h2>Featured Work</h2>
-      <!-- Add YouTube or self-hosted video embeds here -->
-      <div class="video-grid">
-        <iframe src="https://www.youtube.com/embed/T3-BRitC2WE" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/TJSXLTrix3k" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/Gd-Pk2vJhyQ" frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/j4arBrav1oM" frameborder="0" allowfullscreen></iframe>
-        <!-- Repeat for more videos -->
+  <!-- YOUTUBE (Most Viewed) -->
+  <section class="py-5 border-top border-secondary">
+    <div class="container">
+      <h2 class="fw-bold mb-4 text-center">Most Viewed on YouTube</h2>
+      <div class="row g-4">
+        <!-- Replace the IDs with your top videos -->
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <iframe src="https://www.youtube.com/embed/T3-BRitC2WE" title="YouTube video" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <iframe src="https://www.youtube.com/embed/Gd-Pk2vJhyQ" title="YouTube video" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow">
+            <iframe src="https://www.youtube.com/embed/TJSXLTrix3k" title="YouTube video" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
-    </section>
-    <section class="testimonials">
-      <h2>Client Feedback</h2>
-      <blockquote>
-       "Credit goes to Bryant Thomas. We appreciate you sharing your passion and talents with us. Looking forward to our future projects.”<br>— Poor Boys Tattoo
-      </blockquote>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 True North Media</p>
+      <div class="text-center mt-4">
+        <a href="https://youtube.com/@NomadDigital21" target="_blank" class="btn btn-outline-light btn-sm">See all on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-4 border-top border-secondary">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <span class="text-muted small">© <span id="year"></span> True North Media</span>
+      <a href="booking.html" class="btn btn-sm btn-primary">Book Now</a>
+    </div>
   </footer>
-  <script src="./main.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

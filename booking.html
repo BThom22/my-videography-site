@@ -1,58 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book a Session | True North Media</title>
-  <link rel="stylesheet" href="./style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="icon" type="image/png" href="./compass flower.png">
-  <meta property="og:title" content="True North Media | Videography">
-  <meta property="og:description" content="Modern videography for brands, events, and creatives.">
-  <meta property="og:image" content="https://true-north.media/ogimage.png">
-  <meta property="og:url" content="https://true-north.media/">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a date</title>
+
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+  <style>
+    /* === Calendar styles === */
+    .calendar { background:#151515; border-radius:12px; padding:16px; box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+    .cal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+    .cal-header h3 { margin:0; font-size:1.1rem; }
+    .cal-grid { display:grid; grid-template-columns: repeat(7, 1fr); gap:6px; }
+    .cal-day, .cal-dow { text-align:center; padding:.6rem 0; border-radius:8px; }
+    .cal-dow { color:#9aa0a6; font-size:.8rem; }
+    .cal-day { background:#1e1e1e; cursor:pointer; user-select:none; }
+    .cal-day:hover { outline:2px solid #2a62ff55; }
+    .cal-day.muted { background:transparent; color:#5f6368; cursor:default; }
+    .cal-day.disabled { background:#262626; color:#6b6b6b; cursor:not-allowed; text-decoration: line-through; }
+    .cal-day.today { border:1px dashed #6ea8fe; }
+    .cal-day.selected { background:#0d6efd; color:white; }
+    .cal-legend .badge { opacity:.85 }
+  </style>
 </head>
 <body>
-  <header>
-    <header>
- <nav>
-    <div class="logo">
-      <img src="./truenorthlogo.png" alt="Logo" />
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">True North Media</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link active" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Client Login</a></li>
+        </ul>
+      </div>
     </div>
-    <button class="hamburger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="booking.html" class="active">Book</a></li>
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-     <a
-      href="https://www.youtube.com/@NomadDigital21" 
-      target="_blank" 
-      rel="noopener" 
-      class="youtube-icon"
-      aria-label="Visit our YouTube channel"
-    >
-      <i class="fab fa-youtube"></i>
-    </a>
   </nav>
-</header>
 
+  <!-- CONTENT -->
+  <main class="container mt-5 pt-5">
+    <div class="row g-4">
+      <!-- Calendar -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body">
+            <h1 class="fw-bold h3 mb-3">Availability</h1>
 
-  </header>
-  <main>
-    <h1>Book a Session</h1>
-    <!-- Calendly or TidyCal embed here -->
-    <iframe src="https://calendly.com/bryant-truenmedia" width="100%" height="600" frameborder="0"></iframe>
+            <div class="calendar" id="calendar">
+              <div class="cal-header">
+                <button class="btn btn-sm btn-outline-light" id="prevMonth" type="button">‹</button>
+                <h3 id="calLabel">Month YYYY</h3>
+                <button class="btn btn-sm btn-outline-light" id="nextMonth" type="button">›</button>
+              </div>
+              <div class="cal-grid" id="dow">
+                <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div>
+                <div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div><div class="cal-dow">Sat</div>
+              </div>
+              <div class="cal-grid" id="calGrid"></div>
+            </div>
+
+            <div class="cal-legend mt-3 d-flex gap-2">
+              <span class="badge text-bg-primary">Selected</span>
+              <span class="badge text-bg-secondary">Unavailable</span>
+              <span class="badge text-bg-dark">Available</span>
+            </div>
+
+            <p class="mt-3 mb-0"><strong>Selected date:</strong> <span id="selectedDateText">—</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-lg">
+          <div class="card-body">
+            <h2 class="fw-bold h3 mb-3">Request a Booking</h2>
+            <p class="text-muted">Pick an available date on the calendar, then tell us about your project.</p>
+
+            <!-- Netlify form -->
+            <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" id="bookingForm">
+              <input type="hidden" name="form-name" value="booking">
+              <p class="d-none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+
+              <!-- Hidden date that we fill from the calendar -->
+              <input type="hidden" name="date" id="dateField">
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Name</label>
+                  <input type="text" name="name" class="form-control" required autocomplete="name">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Email</label>
+                  <input type="email" name="email" class="form-control" required autocomplete="email">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Event Type</label>
+                  <select name="type" class="form-select" required>
+                    <option value="">Select…</option>
+                    <option>Wedding</option>
+                    <option>Brand/Commercial</option>
+                    <option>Event</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Hours of Coverage</label>
+                  <select name="hours" class="form-select" required>
+                    <option value="">Select…</option>
+                    <option>2 hours</option>
+                    <option>4 hours</option>
+                    <option>6 hours</option>
+                    <option>8 hours</option>
+                    <option>Full day</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label fw-bold">Details</label>
+                  <textarea name="details" class="form-control" rows="5" placeholder="Locations, timeline, goals, style…"></textarea>
+                </div>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button class="btn btn-primary btn-lg" type="submit">Send Request</button>
+              </div>
+
+              <p class="small text-muted mt-3">Prefer email? <a href="mailto:hello@true-north.media" class="link-light">bryant@truenmedia.com</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
-  <footer>
-    <p>© 2025 True North Media</p>
-  </footer>
-  <script src="./main.js"></script>
+
+  <!-- Calendar logic -->
+<script>
+  /* ========= Blocked dates =========
+     Use either/both:
+     - `unavailable` for single specific dates
+     - `unavailableRanges` for inclusive ranges (start..end)
+     Format: YYYY-MM-DD
+  */
+  const unavailable = new Set([
+    // "2025-08-20",
+  ]);
+
+  const unavailableRanges = [
+    { start: "2025-08-12", end: "2025-08-18" },
+    // { start: "2025-09-05", end: "2025-09-07" },
+  ];
+
+  /* ========= Optional whitelist mode =========
+     If you want to allow ONLY specific dates, set useWhitelist = true
+     and fill `whitelist` with allowed dates. (Ranges ignored in whitelist mode.)
+  */
+  const useWhitelist = false;
+  const whitelist = new Set([
+    // "2025-08-22",
+  ]);
+
+  /* ========= Helpers ========= */
+  const calLabel = document.getElementById('calLabel');
+  const calGrid  = document.getElementById('calGrid');
+  const prevBtn  = document.getElementById('prevMonth');
+  const nextBtn  = document.getElementById('nextMonth');
+  const selectedDateText = document.getElementById('selectedDateText');
+  const dateField = document.getElementById('dateField');
+  const form = document.getElementById('bookingForm');
+
+  const today = new Date();
+  let viewYear = today.getFullYear();
+  let viewMonth = today.getMonth(); // 0-based
+  let selectedISO = null;
+
+  const pad = (n) => (n < 10 ? '0' + n : '' + n);
+  const toISO = (y, m, d) => `${y}-${pad(m + 1)}-${pad(d)}`;
+  const parseISO = (s) => {
+    const [y, m, d] = s.split('-').map(Number);
+    return new Date(y, m - 1, d);
+  };
+
+  function inRanges(iso) {
+    const t = parseISO(iso).getTime();
+    return unavailableRanges.some(({ start, end }) => {
+      const a = parseISO(start).getTime();
+      const b = parseISO(end).getTime();
+      return t >= a && t <= b;
+    });
+  }
+
+  function isPast(y, m, d) {
+    const dt = new Date(y, m, d, 0, 0, 0, 0);
+    const floorToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+    return dt < floorToday;
+  }
+
+  function isDisabled(y, m, d) {
+    const iso = toISO(y, m, d);
+    if (useWhitelist) return !whitelist.has(iso);
+    return unavailable.has(iso) || inRanges(iso);
+  }
+
+  /* ========= Render calendar ========= */
+  function render() {
+    const first = new Date(viewYear, viewMonth, 1);
+    const startDow = first.getDay(); // 0..6 (Sun..Sat)
+    const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+    const monthName = first.toLocaleString(undefined, { month: 'long' });
+    calLabel.textContent = `${monthName} ${viewYear}`;
+
+    calGrid.innerHTML = '';
+
+    // Leading blanks from previous month
+    for (let i = 0; i < startDow; i++) {
+      const div = document.createElement('div');
+      div.className = 'cal-day muted';
+      calGrid.appendChild(div);
+    }
+
+    // Month days
+    for (let d = 1; d <= daysInMonth; d++) {
+      const div = document.createElement('div');
+      div.className = 'cal-day';
+      const iso = toISO(viewYear, viewMonth, d);
+
+      const isToday =
+        viewYear === today.getFullYear() &&
+        viewMonth === today.getMonth() &&
+        d === today.getDate();
+      if (isToday) div.classList.add('today');
+
+      const past = isPast(viewYear, viewMonth, d);
+      const disabled = isDisabled(viewYear, viewMonth, d);
+
+      if (past || disabled) {
+        div.classList.add('disabled');
+      } else {
+        div.addEventListener('click', () => {
+          selectedISO = iso;
+          dateField.value = iso;
+          selectedDateText.textContent = new Date(iso).toLocaleDateString();
+          // visual selection
+          [...calGrid.querySelectorAll('.cal-day')].forEach((el) => el.classList.remove('selected'));
+          div.classList.add('selected');
+        });
+      }
+
+      div.textContent = d;
+      calGrid.appendChild(div);
+    }
+  }
+
+  /* ========= Nav + form guards ========= */
+  prevBtn.addEventListener('click', () => {
+    // Don’t allow navigating to months entirely in the past
+    const min = new Date(today.getFullYear(), today.getMonth(), 1);
+    const prev = new Date(viewYear, viewMonth - 1, 1);
+    if (prev >= min) {
+      viewMonth--;
+      render();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    viewMonth++;
+    render();
+  });
+
+  form.addEventListener('submit', (e) => {
+    if (!dateField.value) {
+      e.preventDefault();
+      alert('Please select an available date on the calendar.');
+    }
+  });
+
+  render();
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

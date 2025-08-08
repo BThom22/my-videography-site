@@ -1,0 +1,21 @@
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.icon-wrapper {
+  font-size: 3rem;
+  color: #aaa;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.service-card:hover .icon-wrapper {
+  color: #007bff;
+  transform: scale(1.15);
+  text-shadow: 0 0 10px rgba(161, 49, 247, 0.7), 0 0 20px rgba(54, 151, 255, 0.4);
+}
+

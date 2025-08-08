@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Finish sign-in</title>
+
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="container py-5">
+
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card border-0 shadow-lg">
+        <div class="card-body p-4">
+          <h2 class="fw-bold mb-2">One moment…</h2>
+          <p id="finishMsg" class="text-muted mb-4">Checking your sign-in link.</p>
+
+          <!-- Success summary -->
+          <div id="successBlock" style="display:none;">
+            <div class="alert alert-success mb-4">
+              You’re signed in. You can set a password for future logins, or skip.
+            </div>
+
+            <!-- Password form -->
+            <form id="pwForm" class="row gy-3" autocomplete="new-password" style="max-width:520px;">
+              <div class="col-12">
+                <label class="form-label fw-bold" for="pw1">New password</label>
+                <div class="input-group">
+                  <input id="pw1" type="password" class="form-control" placeholder="At least 8 characters" required>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePw1">Show</button>
+                </div>
+                <div class="form-text">
+                  Use 8+ characters. Adding a number & symbol is even better.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label class="form-label fw-bold" for="pw2">Confirm password</label>
+                <div class="input-group">
+                  <input id="pw2" type="password" class="form-control" required>
+                  <button class="btn btn-outline-secondary" type="button" id="togglePw2">Show</button>
+                </div>
+              </div>
+
+              <!-- Strength meter -->
+              <div class="col-12">
+                <div class="progress" role="progressbar" aria-label="Password strength">
+                  <div id="pwStrength" class="progress-bar" style="width: 0%"></div>
+                </div>
+                <small id="pwHint" class="text-muted"></small>
+              </div>
+
+              <div class="col-12 d-flex gap-2">
+                <button class="btn btn-primary" type="submit">Save password & continue</button>
+                <button id="skipPw" class="btn btn-outline-light" type="button">Skip for now</button>
+              </div>
+
+              <p id="pwMsg" class="mt-2"></p>
+            </form>
+          </div>
+
+          <!-- Retry / fallback -->
+          <div id="fallbackBlock" style="display:none;">
+            <div class="alert alert-warning mb-3">
+              This link is invalid or expired. You can request a new invite.
+            </div>
+            <a class="btn btn-primary" href="login.html">Back to login</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="finish.js"></script>
+</body>
+</html>
