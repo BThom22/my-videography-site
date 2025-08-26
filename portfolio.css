@@ -1,3 +1,6 @@
+body {
+  background: var(--pe-bg, #0f1116); 
+}
 .portfolio-wrap { padding-top: 96px; }
 
 /* Grid layout */
