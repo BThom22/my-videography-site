@@ -9,7 +9,7 @@
   <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
   <link rel="stylesheet" href="theme.css">
   <link rel="stylesheet" href="portfolio.css">
-  <link rel="icon" href="assets/favicon.ico">
+  <link rel="icon" href="favicon.ico">
 </head>
 <body>
   <!-- NAVBAR -->
@@ -22,7 +22,7 @@
       </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
-         <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
            <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
           <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
           <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
@@ -35,23 +35,28 @@
   <main class="container portfolio-wrap">
     <header class="text-center mb-4">
       <h1 class="fw-bold">Portfolio</h1>
-      <p class="text-muted mb-0">A selection of recent work.</p>
+      <p class="text-muted mb-0">Sixteen of my recent favorites.</p>
     </header>
 
-    <!-- Grid -->
+    <!-- Grid (all images live at project root) -->
     <section id="grid" class="grid">
-      <!-- Example item – duplicate for each photo -->
-      <figure class="grid-item">
-        <a href="assets/portfolio/photo-01-lg.jpg" data-title="Sample Project">
-          <img
-            src="assets/portfolio/photo-01-sm.jpg"
-            srcset="assets/portfolio/photo-01-sm.jpg 600w, assets/portfolio/photo-01-lg.jpg 1600w"
-            sizes="(max-width: 600px) 100vw, 33vw"
-            loading="lazy" alt="Sample Project">
-        </a>
-      </figure>
-
-      <!-- Add more <figure> blocks for each photo -->
+      <!-- Duplicate/adjust as needed; these assume photo01.jpg .. photo16.jpg at root -->
+      <figure class="grid-item"><a href="photo01.png"><img src="photo01.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo02.png"><img src="photo02.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo03.png"><img src="photo03.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo04.png"><img src="photo04.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo05.png"><img src="photo05.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo06.png"><img src="photo06.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo07.png"><img src="photo07.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo08.png"><img src="photo08.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo09.png"><img src="photo09.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo10.png"><img src="photo10.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo11.png"><img src="photo11.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo12.png"><img src="photo12.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo13.png"><img src="photo13.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo14.png"><img src="photo14.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo15.png"><img src="photo15.png" loading="lazy" alt=""></a></figure>
+      <figure class="grid-item"><a href="photo16.png"><img src="photo16.png" loading="lazy" alt=""></a></figure>
     </section>
   </main>
 
@@ -60,22 +65,21 @@
     <button class="lightbox-close" aria-label="Close (Esc)">&times;</button>
     <div class="lightbox-inner">
       <img id="lightboxImg" alt="">
-      <div id="lightboxCaption" class="caption"></div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
+    // Simple lightbox
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lightboxImg');
-    const lbCaption = document.getElementById('lightboxCaption');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    function openLightbox(href, title) {
+    function openLightbox(href) {
       lb.hidden = false;
       document.body.style.overflow = 'hidden';
       lbImg.src = href;
-      lbCaption.textContent = title || '';
       setTimeout(() => lb.classList.add('show'), 10);
     }
     function closeLightbox() {
@@ -87,9 +91,8 @@
       const a = e.target.closest('a');
       if (!a) return;
       e.preventDefault();
-      openLightbox(a.href, a.getAttribute('data-title'));
+      openLightbox(a.getAttribute('href'));
     });
-
     closeBtn.addEventListener('click', closeLightbox);
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !lb.hidden) closeLightbox(); });
