@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giveaway – True North Media</title>
+
+  <!-- SEO / Share -->
+  <meta name="description" content="Enter to win an All-Inclusive Wedding Package or a Family Portrait Session from True North Media." />
+  <meta property="og:title" content="True North Media Giveaway" />
+  <meta property="og:description" content="Win an All-Inclusive Wedding Package or a Family Portrait Session." />
+  <meta property="og:image" content="https://YOURDOMAIN.com/og-image.jpg" />
+  <meta property="og:url" content="https://YOURDOMAIN.com/giveaway.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Bootstrap + your theme -->
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="icon" href="favicon.ico">
+
+  <style>
+    body { background: var(--pe-bg, #0f1116); }
+    .page-wrap { padding-top: 96px; }
+    .hero {
+      background: radial-gradient(1200px 500px at 50% -200px, #6f63ff22, transparent 60%);
+      text-align:center; padding: 2.5rem 1rem 1rem;
+    }
+    .hero h1 { font-weight: 900; }
+    .prize { display:grid; gap:12px; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); margin: 1rem auto 0; max-width: 980px; }
+    .prize .card { background:#1f2128; border:1px solid #2a2d35; border-radius:14px; padding:1rem 1.25rem; }
+    .prize h3 { margin:0 0 .25rem; }
+    .form-card {
+      background:#1f2128; border:1px solid #2a2d35; border-radius:16px;
+      padding:1.5rem; max-width:820px; margin: 1.25rem auto;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+    }
+    .btn-gradient{ background:linear-gradient(90deg,#6f63ff,#b796ff); color:#fff; border:0; }
+    .btn-gradient:hover{ filter:brightness(1.05); }
+    .fine { color:#98a1ad; font-size:.9rem; }
+    .rules { background:#171922; border:1px solid #2a2d35; border-radius:12px; padding:1rem; max-width:820px; margin:1rem auto; }
+    .req { color:#b48cff; font-weight:700; }
+    .hidden{ display:none !important; }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="nav-bg"></div>
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">True North Media</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <!-- keep this page hidden from nav -->
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container page-wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="display-6">True North Media Giveaway</h1>
+      <p class="text-muted mb-0">Enter for a chance to win one of two prizes:</p>
+    </section>
+
+    <!-- PRIZES -->
+    <section class="prize">
+      <div class="card">
+        <h3>🎥 All-Inclusive Wedding Package</h3>
+        <p class="mb-1">Cinematic highlight film (5–7 min), ceremony & speeches recorded in full, licensed music, professional color—<strong>$3,500+ value</strong>.</p>
+      </div>
+      <div class="card">
+        <h3>📸 Family Portrait Session</h3>
+        <p class="mb-1">Up to 1 hour on location, 15–20 edited images, online gallery, print release—<strong>$300 value</strong>.</p>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section>
+      <form
+        name="giveaway"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        action="/thank-you.html"
+        class="form-card needs-validation"
+        novalidate
+      >
+        <!-- Netlify form name (required) -->
+        <input type="hidden" name="form-name" value="giveaway">
+        <!-- Honeypot -->
+        <p class="hidden">
+          <label>Don’t fill this out: <input name="bot-field"></label>
+        </p>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Name <span class="req">*</span></label>
+            <input class="form-control" name="name" required autocomplete="name">
+            <div class="invalid-feedback">Please enter your name.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email <span class="req">*</span></label>
+            <input class="form-control" type="email" name="email" required autocomplete="email">
+            <div class="invalid-feedback">Please enter a valid email.</div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone (optional)</label>
+            <input class="form-control" name="phone" autocomplete="tel">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Which prize are you entering for? <span class="req">*</span></label>
+            <select class="form-select" name="prize" required>
+              <option value="" selected disabled>Choose an option</option>
+              <option>Wedding Package</option>
+              <option>Family Session</option>
+              <option>Both</option>
+            </select>
+            <div class="invalid-feedback">Please choose an option.</div>
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Tell us a bit about your date/session (optional)</label>
+            <textarea class="form-control" name="notes" rows="3" placeholder="Date, location, details…"></textarea>
+          </div>
+
+          <div class="col-12 form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="optIn" name="opt_in" value="yes">
+            <label class="form-check-label" for="optIn">Subscribe to occasional updates & offers</label>
+          </div>
+
+          <div class="col-12">
+            <button class="btn btn-gradient btn-lg mt-1" type="submit">Enter Giveaway</button>
+            <p class="fine mt-2">No purchase necessary. Open to Illinois residents 18+. Ends <strong>MM/DD</strong>. Winners chosen at random and notified by email within 72 hours. See rules below.</p>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- RULES / DISCLAIMERS -->
+    <section class="rules">
+      <h4 class="mb-2">Official Rules (Summary)</h4>
+      <ul class="mb-2">
+        <li>One entry per person. Duplicate entries may be removed.</li>
+        <li>Wedding prize valid for available dates within 12 months; travel fees may apply outside local area.</li>
+        <li>Family session prize valid within 6 months; within local service area or travel fee applies.</li>
+        <li>Non-transferable; no cash value. By entering, you agree to be contacted about your entry and related services.</li>
+      </ul>
+      <p class="fine mb-0">Facebook/Instagram are not sponsors or administrators of this promotion.</p>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Client-side validation (keeps spam down, better UX) -->
+  <script>
+    (function () {
+      const form = document.querySelector('.needs-validation');
+      form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+          e.preventDefault(); e.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+
+      // navbar zoom effect (optional)
+      const collapse = document.querySelector('#nav');
+      if (collapse){
+        collapse.addEventListener('shown.bs.collapse', () => document.body.classList.add('nav-open'));
+        collapse.addEventListener('hidden.bs.collapse', () => document.body.classList.remove('nav-open'));
+      }
+    })();
+  </script>
+</body>
+</html>

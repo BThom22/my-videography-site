@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thanks for Entering – True North Media</title>
+  <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Optional: Google Ads conversion (replace with your tag) -->
+  <!-- <script>
+     gtag('event', 'conversion', {'send_to': 'AW-XXXXXXX/YYYYYYYY'});
+  </script> -->
+  <style>
+    body { background: var(--pe-bg, #0f1116); }
+    .wrap { padding-top: 96px; }
+    .cardy{
+      background:#1f2128; border:1px solid #2a2d35; border-radius:16px;
+      padding:2rem; max-width:680px; margin: 2rem auto; text-align:center;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+    }
+    .btn-gradient{ background:linear-gradient(90deg,#6f63ff,#b796ff); color:#fff; border:0; }
+    .btn-gradient:hover{ filter:brightness(1.05); }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="nav-bg"></div>
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">True North Media</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse"></div>
+    </div>
+  </nav>
+
+  <main class="container wrap">
+    <div class="cardy">
+      <h1 class="fw-bold mb-2">Thanks for entering! 🎉</h1>
+      <p class="text-muted">We’ll announce winners on <strong>MM/DD</strong> by email. Keep an eye on your inbox.</p>
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <a class="btn btn-outline-light" href="portfolio.html">See Our Work</a>
+        <a class="btn btn-gradient" href="pricing.html">View Packages</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const collapse = document.querySelector('#nav');
+    if (collapse){
+      collapse.addEventListener('shown.bs.collapse', () => document.body.classList.add('nav-open'));
+      collapse.addEventListener('hidden.bs.collapse', () => document.body.classList.remove('nav-open'));
+    }
+  </script>
+</body>
+</html>
